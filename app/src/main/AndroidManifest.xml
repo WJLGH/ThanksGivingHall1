@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.sxd.thanksgivinghall">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/icon"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@mipmap/icon"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoActionBar">
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.example.sxd.thanksgivinghall.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/filepaths" />
+        </provider>
+
+        <activity
+            android:name=".SplashActivity"
+            android:label="@string/app_name"></activity>
+        <activity android:name=".GuideActivity" />
+        <activity android:name=".login.LoginActivity" />
+        <activity android:name=".login.SettingActivity" />
+        <activity
+            android:name=".MainFragment"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity android:name=".login.ChangePwActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".notice.NoticeAddActivity" />
+        <activity android:name=".notice.NoticeDetailActivity" />
+        <activity android:name=".task.TaskAddActivity" />
+        <activity android:name=".task.ToDoTaskDetailActivity" />
+        <activity android:name=".task.FinishedTaskDetailActivity" />
+        <activity android:name=".task.PublishedTaskDetailActivity" />
+        <activity android:name=".treelist.base.BasesActivity" />
+        <activity android:name=".treelist.officer.BasesActivity" />
+        <activity android:name=".treelist.officeUser.BasesActivity" />
+        <activity android:name=".task.ReplyTaskActivity" />
+        <activity android:name=".finance.FinRecordAddActivity">
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
+        </activity>
+        <activity android:name=".FinanceStartActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
