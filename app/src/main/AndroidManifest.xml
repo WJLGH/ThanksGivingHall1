@@ -47,6 +47,7 @@
         <activity android:name=".treelist.officer.BasesActivity" />
         <activity android:name=".treelist.officeUser.BasesActivity" />
         <activity android:name=".task.ReplyTaskActivity" />
+        <activity android:name=".finance.FinRecordDetailActivity"></activity>
         <activity android:name=".finance.FinRecordAddActivity">
             <!--<intent-filter>-->
                 <!--<action android:name="android.intent.action.MAIN" />-->

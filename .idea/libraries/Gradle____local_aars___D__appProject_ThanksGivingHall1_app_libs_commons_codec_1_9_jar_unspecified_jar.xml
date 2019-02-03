@@ -1,9 +1,7 @@
 <component name="libraryTable">
-  <library name="libs">
+  <library name="Gradle: __local_aars__:D.\appProject\ThanksGivingHall1\app\libs\commons-codec-1.9.jar:unspecified@jar">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/app/libs/commons-codec-1.9.jar!/" />
-      <root url="jar://$PROJECT_DIR$/app/libs/servlet-api-2.5.jar!/" />
-      <root url="jar://$PROJECT_DIR$/app/libs/commons-lang3-3.3.2.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
