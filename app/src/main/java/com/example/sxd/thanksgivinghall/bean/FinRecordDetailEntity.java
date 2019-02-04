@@ -12,9 +12,6 @@ public class FinRecordDetailEntity {
         private  String reType;
         private  String busType;
         private  Double amount;
-
-
-
         private  String description;
         private  String inId;
         private  String outId;

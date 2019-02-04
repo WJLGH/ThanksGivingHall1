@@ -11,10 +11,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 
 import com.example.sxd.thanksgivinghall.bean.Constants;
 import com.example.sxd.thanksgivinghall.finance.FinRecordAddActivity;
 import com.example.sxd.thanksgivinghall.finance.FinRecordDetailActivity;
+import com.example.sxd.thanksgivinghall.finance.FinRecordListActivity;
 import com.example.sxd.thanksgivinghall.login.SettingActivity;
 import com.example.sxd.thanksgivinghall.utils.SharedPreUtils;
 
@@ -36,6 +38,24 @@ public class FinanceStartActivity extends AppCompatActivity {
     Button btnList;
     @BindView(R.id.bt_fin_start_set)
     Button btnSet;
+    @BindView(R.id.btn_start_type_list)
+    Button btnTypeList;
+    @BindView(R.id.btn_start_type_sum)
+    Button btnTypeSum;
+    @BindView(R.id.btn_start_date_list)
+    Button btnDateList;
+    @BindView(R.id.btn_start_date_sum)
+    Button btnDateSum;
+    @BindView(R.id.btn_start_acc_list)
+    Button btnAccList;
+    @BindView(R.id.btn_start_acc_sum)
+    Button btnAccSum;
+    @BindView(R.id.et_start_acc)
+    EditText etAcc;
+    @BindView(R.id.et_start_type)
+    EditText etType;
+    @BindView(R.id.et_start_date)
+    EditText etDate;
     @BindView(R.id.vp_fin_start)
     ViewPager viewPager ;
     @Override
@@ -51,6 +71,39 @@ public class FinanceStartActivity extends AppCompatActivity {
         SharedPreUtils.putString(this,Constants.SP_PORT,"8080");
     }
 
+    @OnClick({R.id.btn_start_acc_sum,R.id.btn_start_date_sum,R.id.btn_start_type_sum})
+    public void intentSum(View v) {
+        Intent intent = null;
+        switch (v.getId()) {
+            case R.id.btn_start_acc_sum:
+                intent = new Intent();
+                break;
+            case R.id.btn_start_date_sum:
+                break;
+            case R.id.btn_start_type_sum:
+                break;
+        }
+        startActivity(intent);
+    }
+    @OnClick({R.id.btn_start_acc_list,R.id.btn_start_type_list,R.id.btn_start_date_list})
+    public void intentList(View v) {
+        Intent intent = null;
+        switch (v.getId()) {
+            case R.id.btn_start_acc_list:
+                intent = new Intent();
+                intent.putExtra("acName",etAcc.getText().toString());
+                break;
+            case R.id.btn_start_type_list:
+                intent = new Intent();
+                intent.putExtra("reType",etType.getText().toString());
+                break;
+            case R.id.btn_start_date_list:
+                intent = new Intent();
+                intent.putExtra("dateStr",etDate.getText().toString());
+                break;
+        }
+        startActivity(intent);
+    }
     @OnClick({R.id.bt_fin_start_add,R.id.bt_fin_start_detail,R.id.bt_fin_start_list,R.id.bt_fin_start_set})
     public void intentAct(View v) {
         switch (v.getId()) {
@@ -66,10 +119,10 @@ public class FinanceStartActivity extends AppCompatActivity {
                 Intent intent3 = new Intent(FinanceStartActivity.this,SettingActivity.class);
                 startActivity(intent3);
                 break;
-//            case R.id.bt_fin_start_list:
-//                Intent intent2 = new Intent(FinanceStartActivity.this,FinRecordListActivity.class);
-//                startActivity(intent2);
-//                break;
+            case R.id.bt_fin_start_list:
+                Intent intent2 = new Intent(FinanceStartActivity.this,FinRecordListActivity.class);
+                startActivity(intent2);
+                break;
         }
 
     }
@@ -78,8 +131,7 @@ public class FinanceStartActivity extends AppCompatActivity {
         LayoutInflater inflater = this.getLayoutInflater();
         list.add(inflater.inflate(R.layout.activity_fin_record_add,null));
         list.add(inflater.inflate(R.layout.activity_fin_record_detail,null));
-
-//        list.add(inflater.inflate(R.layout.activity_fin_record_list,null));
+        list.add(inflater.inflate(R.layout.activity_fin_record_list,null));
         PagerAdapter pagerAdapter = new PagerAdapter() {
             @Override
             public int getCount() {
@@ -101,7 +153,6 @@ public class FinanceStartActivity extends AppCompatActivity {
             @Override
             public void destroyItem(ViewGroup container, int position,
                                     Object object) {
-                // TODO Auto-generated method stub
                 container.removeView(list.get(position));
             }
         };

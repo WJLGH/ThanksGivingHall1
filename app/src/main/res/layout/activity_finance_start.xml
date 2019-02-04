@@ -7,17 +7,18 @@
     android:orientation="vertical"
     tools:context=".FinanceStartActivity">
 
+
     <android.support.v4.view.ViewPager
         android:id="@+id/vp_fin_start"
         android:layout_width="match_parent"
-        android:layout_height="99dp">
+        android:layout_height="9dp">
 
     </android.support.v4.view.ViewPager>
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="match_parent"
-        android:layout_height="329dp"
+        android:layout_height="47dp"
         android:text="请先点击设置设置好IP地址后再进行测试，本地服务器地址为10.0.2.2端口为8080" />
 
     <Button
@@ -26,10 +27,14 @@
         android:layout_height="wrap_content"
         android:text="setting" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="基础设置" />
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="53dp"
         android:orientation="horizontal">
 
         <Button
@@ -37,21 +42,120 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="add" />
-
-        <Button
-            android:id="@+id/bt_fin_start_detail"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="detail" />
+            android:text="添加" />
 
         <Button
             android:id="@+id/bt_fin_start_list"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="list" />
+            android:text="列表" />
+
+        <Button
+            android:id="@+id/bt_fin_start_detail"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="详情" />
+
     </LinearLayout>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="分类检索" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_start_type_sum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="汇总信息" />
+
+        <EditText
+            android:id="@+id/et_start_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="收入" />
+
+        <Button
+            android:id="@+id/btn_start_type_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="类型详情" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="分时间检索" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_start_date_sum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="汇总信息" />
+
+        <EditText
+            android:id="@+id/et_start_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="2019-02" />
+
+        <Button
+            android:id="@+id/btn_start_date_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="当日详情" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="分账户检索" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_start_acc_sum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="汇总信息" />
+
+        <EditText
+            android:id="@+id/et_start_acc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="现金" />
+
+        <Button
+            android:id="@+id/btn_start_acc_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="账户详情" />
+
+    </LinearLayout>
 </LinearLayout>

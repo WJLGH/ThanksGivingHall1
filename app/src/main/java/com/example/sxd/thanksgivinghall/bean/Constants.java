@@ -28,4 +28,9 @@ public class Constants {
     public static final String SP_LOGIN_USER_PORTRAIT = "SP_LOGIN_USER_PORTRAIT";       //用户头像
 
 
+    //财务管理模块常量
+    public static final String FIN_REOCRD_TYPE_IN = "收入"; // 收入
+    public static final String FIN_REOCRD_TYPE_OUT = "支出"; //支出
+    public static final String FIN_REOCRD_TYPE_CH = "转账";//转账
+
 }

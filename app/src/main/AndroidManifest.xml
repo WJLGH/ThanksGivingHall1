@@ -27,7 +27,7 @@
 
         <activity
             android:name=".SplashActivity"
-            android:label="@string/app_name"></activity>
+            android:label="@string/app_name" />
         <activity android:name=".GuideActivity" />
         <activity android:name=".login.LoginActivity" />
         <activity android:name=".login.SettingActivity" />
@@ -47,13 +47,15 @@
         <activity android:name=".treelist.officer.BasesActivity" />
         <activity android:name=".treelist.officeUser.BasesActivity" />
         <activity android:name=".task.ReplyTaskActivity" />
-        <activity android:name=".finance.FinRecordDetailActivity"></activity>
+        <activity android:name=".finance.FinRecordDetailActivity" />
         <activity android:name=".finance.FinRecordAddActivity">
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN" />-->
 
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
         <activity android:name=".FinanceStartActivity">
             <intent-filter>
@@ -62,6 +64,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".finance.FinRecordListActivity" />
+        <activity android:name=".finance.TypeSumActivity"></activity>
     </application>
 
 </manifest>

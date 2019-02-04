@@ -1,5 +1,6 @@
 package com.example.sxd.thanksgivinghall.finance;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -55,10 +56,9 @@ public class FinRecordDetailActivity extends BaseActivity implements FinRecordDe
     }
 
     private void initData() {
-//        Intent intent = getIntent();
-//        id = intent.getStringExtra("id");
-        clearView();
-        id = "3c455601-26af-11e9-afd2-00ffc45c1233";
+        Intent intent = getIntent();
+        id = intent.getStringExtra("id");
+        id = id != null ? id : "3c455601-26af-11e9-afd2-00ffc45c1233" ;
         mPresenter.request(id);
     }
     private void clearView() {
@@ -96,18 +96,8 @@ public class FinRecordDetailActivity extends BaseActivity implements FinRecordDe
         tvDesc.setText(data.getDescription());
         tvNoteDate.setText(data.getNoteDate());
         Toast.makeText(this,data.getReType(), Toast.LENGTH_LONG).show();
-        if(data.getReType() != null) {
-            if(data.getReType().equals("支出")) {
-                tvOut.setText(data.getOutId());
-//                tvIn.setText("入"+data.getInId());
-            } else if(data.getReType().equals("收入")) {
-//                tvOut.setText("出"+data.getOutId());
-                tvIn.setText(data.getInId());
-            } else if(data.getReType().equals("转账")){
-                tvOut.setText(data.getOutId());
-                tvIn.setText(data.getInId());
-            }
-        }
+        tvOut.setText(data.getOutId() != null ? data.getOutId() : "");
+        tvIn.setText(data.getInId() != null ? data.getInId() : "");
     }
 
     @Override
