@@ -8,7 +8,7 @@ import retrofit2.http.Query;
 
 public interface FinAccountService {
 
-    @GET("infc/infcFinAccount/listFinRecord")
+    @GET("infc/infcFinAccount/requestStartToEndList")
     Call<FinRecordListEntity> listFinRecord(@Query("id") String id ,@Query("acName") String acName);
 
 

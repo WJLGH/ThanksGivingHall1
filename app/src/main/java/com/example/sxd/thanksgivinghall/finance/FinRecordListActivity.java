@@ -15,6 +15,8 @@ import com.example.sxd.thanksgivinghall.bean.FinRecordListEntity;
 import com.example.sxd.thanksgivinghall.notice.NoticeDetailActivity;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -28,6 +30,7 @@ public class FinRecordListActivity extends AppCompatActivity implements FinRecor
 
     private FinRecordListContract.Presenter mPresenter;
     private FinRecordListAdapter mAdapter;
+    ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,14 +41,43 @@ public class FinRecordListActivity extends AppCompatActivity implements FinRecor
     }
 
     /**
-     * 设置请求的日期
+     * 设置请求的参数 可以是：
+     *  busType
+     *  startDate endDate
+     *  account  or acName
+     *  dateStr
      */
     public  void initView() {
-        String startDate = null,endDate = null;
-        startDate = endDate = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
-        mPresenter.request(startDate,endDate);
-    }
+        Intent intent = getIntent();
+        //账户类型
+        String id = intent.getStringExtra("id");
+        String acName = intent.getStringExtra("acName");
+        if(id != null || acName != null ) {
+            mPresenter.requestAccList(id,acName);
+            return;
+        }
+        //交易类型
+        String busType = intent.getStringExtra("busType");
+        if(busType != null) {
+            mPresenter.requestBusTypeList(busType);
+            return;
+        }
+        //时间类型
+        String dateStr = intent.getStringExtra("dateStr");
+        if(dateStr != null) {
+            mPresenter.requestDateList(dateStr);
+            return;
+        }
+        //时间段类型
+        String startDate = intent.getStringExtra("startDate");;
+        String endDate = intent.getStringExtra("endDate");;
+        //startDate = endDate = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+        if(startDate != null && endDate != null) {
+            mPresenter.requestStartToEndList(startDate,endDate);
+            return;
+        }
 
+    }
 
     @Override
     public void showMessage(String message) {

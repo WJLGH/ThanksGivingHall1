@@ -10,13 +10,24 @@ import retrofit2.http.Query;
 public class FinRecordListContract {
     interface  View extends BaseView<Presenter> {
         void showMessage(String message);
-
         void requestSuccess( FinRecordListEntity value);
     }
+    /**
+     *  busType
+     *  startDate endDate
+     *  account  or acName
+     *  dateStr
+     */
     interface  Presenter extends  BaseView<View> {
-        void request(String startDate,String endDate);
+        void requestBusTypeList(String busType);
+        void requestStartToEndList(String startDate,String endDate);
+        void requestAccList(String id,String acName );
+        void requestDateList(String dateStr);
     }
     interface Model{
-        void request(String startDate,String endDate, ResultListener<FinRecordListEntity> result);
+        void requestBusTypeList(String busType, ResultListener<FinRecordListEntity> result);
+        void requestStartToEndList(String startDate,String endDate, ResultListener<FinRecordListEntity> result);
+        void requestAccList(String id,String acName, ResultListener<FinRecordListEntity> result);
+        void requestDateList(String dateStr, ResultListener<FinRecordListEntity> result);
     }
 }

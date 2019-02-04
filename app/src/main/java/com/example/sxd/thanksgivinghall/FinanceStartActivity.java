@@ -17,6 +17,7 @@ import com.example.sxd.thanksgivinghall.bean.Constants;
 import com.example.sxd.thanksgivinghall.finance.FinRecordAddActivity;
 import com.example.sxd.thanksgivinghall.finance.FinRecordDetailActivity;
 import com.example.sxd.thanksgivinghall.finance.FinRecordListActivity;
+import com.example.sxd.thanksgivinghall.finance.TypeSumActivity;
 import com.example.sxd.thanksgivinghall.login.SettingActivity;
 import com.example.sxd.thanksgivinghall.utils.SharedPreUtils;
 
@@ -77,28 +78,30 @@ public class FinanceStartActivity extends AppCompatActivity {
         switch (v.getId()) {
             case R.id.btn_start_acc_sum:
                 intent = new Intent();
+                intent.putExtra("acName",etAcc.getText().toString());
                 break;
             case R.id.btn_start_date_sum:
+                intent = new Intent();
+                intent.putExtra("dateStr",etDate.getText().toString());
                 break;
             case R.id.btn_start_type_sum:
+                intent = new Intent(this,TypeSumActivity.class);
+                intent.putExtra("reType",etType.getText().toString());
                 break;
         }
         startActivity(intent);
     }
     @OnClick({R.id.btn_start_acc_list,R.id.btn_start_type_list,R.id.btn_start_date_list})
     public void intentList(View v) {
-        Intent intent = null;
+        Intent intent = new Intent(FinanceStartActivity.this,FinRecordListActivity.class);
         switch (v.getId()) {
             case R.id.btn_start_acc_list:
-                intent = new Intent();
                 intent.putExtra("acName",etAcc.getText().toString());
                 break;
             case R.id.btn_start_type_list:
-                intent = new Intent();
-                intent.putExtra("reType",etType.getText().toString());
+                intent.putExtra("busType",etType.getText().toString());
                 break;
             case R.id.btn_start_date_list:
-                intent = new Intent();
                 intent.putExtra("dateStr",etDate.getText().toString());
                 break;
         }

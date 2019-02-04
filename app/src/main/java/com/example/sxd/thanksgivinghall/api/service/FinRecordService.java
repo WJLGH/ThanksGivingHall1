@@ -29,7 +29,32 @@ public interface FinRecordService {
      * @return
      */
     @GET("infc/infcFinRecord/listFinRecord")
-    Call<FinRecordListEntity> listFinRecord(@Query("startDate")String startDate,@Query("endDate")String endDate);
+    Call<FinRecordListEntity> requestStartToEndList(@Query("startDate")String startDate, @Query("endDate")String endDate);
+
+    /**
+     * 获取交易类型的记录列表
+     * @param busType
+     * @return
+     */
+    @GET("infc/infcFinRecord/listFinRecord")
+    Call<FinRecordListEntity> requestBusTypeList(@Query("busType")String busType);
+
+    /**
+     * 获取账户的记录列表
+     * @param acId
+     * @param acName
+     * @return
+     */
+    @GET("infc/infcFinRecord/listFinRecord")
+    Call<FinRecordListEntity> requestAccList(@Query("acId")String acId,@Query("acName")String acName);
+
+    /**
+     * 获取相应时间的记录列表
+     * @param dateStr
+     * @return
+     */
+    @GET("infc/infcFinRecord/listFinRecord")
+    Call<FinRecordListEntity> requestDateList(@Query("dateStr")String dateStr);
 
     /**
      * 根据ID获取特定的明细记录详情

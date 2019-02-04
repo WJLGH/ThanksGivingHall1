@@ -14,28 +14,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="925ba798-663e-4589-9e1c-b13ad96962e1" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/adapter/FinRecordListAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/adapter/FinTypeSumListAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/api/service/FinAccountService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/bean/FinDateSumListEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/bean/FinTypeSumListEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListContract.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListModelImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListPresenterImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/TypeSumActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/TypeSumContract.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/TypeSumModelImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/TypeSumPresenterImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_fin_record_list.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_type_sum.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fin_record_item.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fin_type_sum_item.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/exchange.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/in.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/out.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/arrays.xml" afterDir="false" />
+    <list default="true" id="925ba798-663e-4589-9e1c-b13ad96962e1" name="Default" comment="2019/02/03 添加根据记录类型显示的列表界面">
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" afterDir="false" />
@@ -46,18 +25,16 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MultilevelTreeLibrary/MultilevelTreeLibrary.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MultilevelTreeLibrary/MultilevelTreeLibrary.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/FinanceStartActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/FinanceStartActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/api/service/FinAccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/api/service/FinAccountService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/api/service/FinRecordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/api/service/FinRecordService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/bean/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/bean/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/bean/FinRecordDetailEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/bean/FinRecordDetailEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/bean/FinRecordListEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/bean/FinRecordListEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordAddActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordAddActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordDetailActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordDetailActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_fin_record_add.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_fin_record_add.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_finance_start.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_finance_start.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListContract.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListContract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListModelImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListModelImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListPresenterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListPresenterImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/TypeSumActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/TypeSumActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_type_sum.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_type_sum.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fin_type_sum_item.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fin_type_sum_item.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -80,56 +57,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="FinTypeSumListAdapter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/adapter/FinTypeSumListAdapter.java">
+      <file leaf-file-name="FinRecordListPresenterImpl.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListPresenterImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="9" column="22" lean-forward="true" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+            <state relative-caret-position="152">
+              <caret line="38" column="16" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FinanceStartActivity.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/FinanceStartActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="488">
-              <caret line="78" column="38" selection-start-line="78" selection-start-column="38" selection-end-line="78" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TypeSumActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/TypeSumActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="24" column="38" lean-forward="true" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="activity_type_sum.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_type_sum.xml">
-          <provider selected="true" editor-type-id="android-designer2">
-            <state />
-          </provider>
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fin_type_sum_item.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fin_type_sum_item.xml">
-          <provider selected="true" editor-type-id="android-designer2">
-            <state />
-          </provider>
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -3152,8 +3087,6 @@
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/bean/FinRecordDetailEntity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_fin_record_list.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListContract.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListModelImpl.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/bean/FinRecordListEntity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fin_record_item.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordDetailActivity.java" />
@@ -3168,18 +3101,20 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/bean/FinDateSumListEntity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/bean/FinTypeSumListEntity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/api/service/FinAccountService.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/api/service/FinRecordService.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_finance_start.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/TypeSumContract.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListPresenterImpl.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/TypeSumModelImpl.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/TypeSumPresenterImpl.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/TypeSumActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/adapter/FinTypeSumListAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_type_sum.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fin_type_sum_item.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/adapter/FinTypeSumListAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/TypeSumActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListContract.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/api/service/FinRecordService.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListModelImpl.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/FinanceStartActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListPresenterImpl.java" />
       </list>
     </option>
   </component>
@@ -3492,14 +3427,20 @@
       <option name="project" value="LOCAL" />
       <updated>1549168894843</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="2019/02/03 添加根据记录类型显示的列表界面">
+      <created>1549277513977</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1549277513977</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info anchor="bottom" id="Android Profiler" order="7" show_stripe_button="false" weight="0.32956153" />
+      <window_info anchor="bottom" id="Android Profiler" order="7" weight="0.32956153" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
@@ -3507,15 +3448,16 @@
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Preview" order="3" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.33239037" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32390383" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="7" visible="true" weight="0.33097595" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Logcat" order="7" weight="0.32956153" />
       <window_info id="Captures" order="2" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4978903" visible="true" weight="0.23324397" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4978903" visible="true" weight="0.31233245" />
       <window_info anchor="bottom" id="Build" order="7" weight="0.32956153" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32956153" />
       <window_info anchor="right" id="Gradle" order="3" />
       <window_info id="Structure" order="1" sideWeight="0.5021097" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Device File Explorer" order="3" side_tool="true" />
@@ -3529,7 +3471,6 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
     <layout-to-restore>
       <window_info anchor="bottom" id="Build" order="7" weight="0.32956153" />
@@ -3596,7 +3537,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="2019/02/03 修复默认IP地址和端口为空的BUG" />
-    <option name="LAST_COMMIT_MESSAGE" value="2019/02/03 修复默认IP地址和端口为空的BUG" />
+    <MESSAGE value="2019/02/03 添加根据记录类型显示的列表界面" />
+    <option name="LAST_COMMIT_MESSAGE" value="2019/02/03 添加根据记录类型显示的列表界面" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -3607,8 +3549,62 @@
           <properties />
           <option name="timeStamp" value="5" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/TypeSumPresenterImpl.java</url>
+          <line>44</line>
+          <properties />
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListModelImpl.java</url>
+          <line>20</line>
+          <properties />
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListActivity.java</url>
+          <line>52</line>
+          <properties />
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListActivity.java</url>
+          <line>65</line>
+          <properties />
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListActivity.java</url>
+          <line>71</line>
+          <properties />
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListModelImpl.java</url>
+          <line>25</line>
+          <properties />
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListActivity.java</url>
+          <line>54</line>
+          <properties />
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListModelImpl.java</url>
+          <line>50</line>
+          <properties />
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListModelImpl.java</url>
+          <line>51</line>
+          <properties />
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="14" />
+      <option name="time" value="41" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -3863,18 +3859,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListModelImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="23" column="25" lean-forward="true" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#472#473#0" expanded="true" />
-            <element signature="e#510#511#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/api/service/FinAccountService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
@@ -3943,20 +3927,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/api/service/FinRecordService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="54" column="29" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListContract.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="19" column="87" selection-start-line="19" selection-start-column="87" selection-end-line="19" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/TypeSumContract.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -3964,37 +3934,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/TypeSumModelImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#181#182#0" expanded="true" />
-            <element signature="e#219#220#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/TypeSumPresenterImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="43" column="92" selection-start-line="43" selection-start-column="92" selection-end-line="43" selection-end-column="92" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1146#1147#0" expanded="true" />
-            <element signature="e#1182#1183#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="49" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -4008,17 +3947,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/TypeSumActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/adapter/FinTypeSumListAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="24" column="38" lean-forward="true" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListPresenterImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="57" column="11" lean-forward="true" selection-start-line="57" selection-start-column="11" selection-end-line="57" selection-end-column="11" />
+        <state relative-caret-position="171">
+          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -4031,7 +3963,14 @@
       </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="206">
-          <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
+          <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListContract.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="20" column="50" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
         </state>
       </provider>
     </entry>
@@ -4040,25 +3979,78 @@
         <state />
       </provider>
       <provider editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+        <state relative-caret-position="171">
+          <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/adapter/FinTypeSumListAdapter.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/TypeSumPresenterImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="22" lean-forward="true" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+        <state relative-caret-position="323">
+          <caret line="43" column="92" selection-start-line="43" selection-start-column="92" selection-end-line="43" selection-end-column="92" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/TypeSumModelImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="18" column="106" selection-start-line="18" selection-start-column="86" selection-end-line="18" selection-end-column="106" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/api/service/FinRecordService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="39" column="64" selection-start-line="39" selection-start-column="57" selection-end-line="39" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/TypeSumActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="51" selection-start-line="51" selection-end-line="51" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/FinanceStartActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
-          <caret line="78" column="38" selection-start-line="78" selection-start-column="38" selection-end-line="78" selection-end-column="38" />
+        <state relative-caret-position="197">
+          <caret line="101" selection-start-line="101" selection-end-line="101" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListModelImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="25" column="46" selection-start-line="25" selection-start-column="46" selection-end-line="25" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#472#473#0" expanded="true" />
+            <element signature="e#510#511#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="54" selection-start-line="54" selection-end-line="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListPresenterImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="38" column="16" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
