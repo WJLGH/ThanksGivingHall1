@@ -25,6 +25,7 @@ import butterknife.ButterKnife;
 
 public class FinRecordListActivity extends AppCompatActivity implements FinRecordListContract.View {
 
+
     @BindView(R.id.rv_fin_record_list)
     RecyclerView rvFinRecordList;
 

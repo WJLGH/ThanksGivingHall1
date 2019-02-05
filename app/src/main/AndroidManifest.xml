@@ -65,7 +65,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".finance.FinRecordListActivity" />
-        <activity android:name=".finance.TypeSumActivity"></activity>
+        <activity android:name=".finance.TypeSumActivity" />
+        <activity android:name=".finance.DateSumActivity"></activity>
     </application>
 
 </manifest>

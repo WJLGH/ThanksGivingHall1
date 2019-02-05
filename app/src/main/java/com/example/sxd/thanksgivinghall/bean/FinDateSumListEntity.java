@@ -8,15 +8,33 @@ public class FinDateSumListEntity {
     private String statusMessage;
     private Data mainData;
     private List<Data> data;
-    public static class Data {
+    public  class Data {
 
+        private Double inAmount;
         private Double outAmount;
-        private String amount;
+        private Double amount;
         private String dateStr;
         private String month;
         private String year;
-        private Double inAmount;
         private String day;
+
+        /**
+         *  总的时间信息 获得的获得列表的时间信息
+         * @return
+         * @param mainDate
+         */
+        public String getTime(String mainDate) {
+            if(mainDate == null) {
+                return dateStr;
+            }
+            if(mainDate.equals(year)) {
+                return month;
+            }
+            if(mainDate.equals(month)) {
+                return day;
+            }
+            return dateStr;
+        }
         public void setOutAmount(Double outAmount) {
             this.outAmount = outAmount;
         }
@@ -24,10 +42,10 @@ public class FinDateSumListEntity {
             return outAmount;
         }
 
-        public void setAmount(String amount) {
+        public void setAmount(Double amount) {
             this.amount = amount;
         }
-        public String getAmount() {
+        public Double getAmount() {
             return amount;
         }
 
