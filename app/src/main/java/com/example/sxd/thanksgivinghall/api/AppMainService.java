@@ -1,6 +1,7 @@
 package com.example.sxd.thanksgivinghall.api;
 
 import com.example.sxd.thanksgivinghall.api.service.DeviceService;
+import com.example.sxd.thanksgivinghall.api.service.FinAccountService;
 import com.example.sxd.thanksgivinghall.api.service.FinRecordService;
 import com.example.sxd.thanksgivinghall.api.service.LoginService;
 import com.example.sxd.thanksgivinghall.api.service.NotifyService;
@@ -17,7 +18,13 @@ public class AppMainService
     private static NotifyService notifyService;
     private static UpLoadService upLoadService;
     private static FinRecordService finRecordService;
+    private static FinAccountService finAccountService;
 
+
+    public static FinAccountService getFinAccountService(String paramString) {
+        finAccountService = (FinAccountService)BaseApi.retrofit(paramString).create(FinAccountService.class);
+        return finAccountService;
+    }
 
     public static FinRecordService getFinRecordService(String paramString) {
         finRecordService = (FinRecordService)BaseApi.retrofit(paramString).create(FinRecordService.class);

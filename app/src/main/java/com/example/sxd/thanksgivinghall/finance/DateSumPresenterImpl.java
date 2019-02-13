@@ -21,6 +21,7 @@ public class DateSumPresenterImpl extends BasePresenterImpl implements DateSumCo
 
     @Override
     public void request(String dateStr) {
+
         if(dateStr == null ||  ! dateStr.matches("^\\d{4}(|-\\d{2}(|-\\d{2}))$") ) {
             mView.showMessage("请输入正确的日期（yyyy-MM-dd) 例如：2019-02-03");
             return;
@@ -44,10 +45,11 @@ public class DateSumPresenterImpl extends BasePresenterImpl implements DateSumCo
             @Override
             public void onSuccess(FinDateSumListEntity value) {
                 FinDateSumListEntity.Data main = value.getMainData();
-                if(main == null ) {
+                if (main == null) {
                     mView.showMessage("查询的日期数据汇总信息为空");
                     return;
                 }
+
                 mView.requestSuccess(value);
             }
         });

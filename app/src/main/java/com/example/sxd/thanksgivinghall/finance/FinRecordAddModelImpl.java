@@ -3,6 +3,7 @@ package com.example.sxd.thanksgivinghall.finance;
 import com.example.sxd.thanksgivinghall.api.AppMainService;
 import com.example.sxd.thanksgivinghall.api.ResultListener;
 import com.example.sxd.thanksgivinghall.bean.Base;
+import com.example.sxd.thanksgivinghall.bean.FinAccountListEntity;
 
 import okhttp3.RequestBody;
 import retrofit2.Call;
@@ -35,5 +36,26 @@ public class FinRecordAddModelImpl implements FinRecordAddContract.Model {
                 result.onEnd();
             }
         });
+    }
+
+    @Override
+    public void requestAcList(final  ResultListener<FinAccountListEntity> result) {
+            Call<FinAccountListEntity> call = AppMainService.getFinAccountService(baseUrl).allAccount();
+            result.onStart();
+            call.enqueue(new Callback<FinAccountListEntity>() {
+                @Override
+                public void onResponse(Call<FinAccountListEntity> call, Response<FinAccountListEntity> response) {
+                    result.onSuccess(response.body());
+                    result.onEnd();
+                }
+
+                @Override
+                public void onFailure(Call<FinAccountListEntity> call, Throwable t) {
+                    //请求失败
+                    result.onFailure(t.getMessage());
+                    //请求结束
+                    result.onEnd();
+                }
+            });
     }
 }

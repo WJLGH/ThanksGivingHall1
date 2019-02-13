@@ -9,6 +9,7 @@ public class FinRecordDetailEntity {
     private Data data;
     public static class Data{
         private  String id;
+        private String dept;
         private  String reType;
         private  String busType;
         private  Double amount;
@@ -16,7 +17,22 @@ public class FinRecordDetailEntity {
         private  String inId;
         private  String outId;
         private String noteDate;//时间字符串
+        private String dateStr;
 
+        public String getDateStr() {
+            return dateStr;
+        }
+
+        public void setDateStr(String dateStr) {
+            this.dateStr = dateStr;
+        }
+        public String getDept() {
+            return dept;
+        }
+
+        public void setDept(String dept) {
+            this.dept = dept;
+        }
 
         public String getNoteDate() {
             return noteDate;
@@ -82,18 +98,6 @@ public class FinRecordDetailEntity {
             this.outId = outId;
         }
 
-        @Override
-        public String toString() {
-            return "Data{" +
-                    "id='" + id + '\'' +
-                    ", reType='" + reType + '\'' +
-                    ", busType='" + busType + '\'' +
-                    ", amount=" + amount +
-                    ", desc='" + description + '\'' +
-                    ", inId='" + inId + '\'' +
-                    ", outId='" + outId + '\'' +
-                    '}';
-        }
     }
     public String getSuccess() {
         return success;

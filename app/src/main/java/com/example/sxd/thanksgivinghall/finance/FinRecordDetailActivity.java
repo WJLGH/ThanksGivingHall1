@@ -30,7 +30,8 @@ public class FinRecordDetailActivity extends BaseActivity implements FinRecordDe
     TextView tvAmount;
     @BindView(R.id.tv_fin_record_detail_note_date)
     TextView tvNoteDate;
-
+    @BindView(R.id.tv_fin_record_detail_dept)
+    TextView tvDept;
     @BindView(R.id.et_fin_record_detail_id)
     EditText etId;
 
@@ -98,6 +99,7 @@ public class FinRecordDetailActivity extends BaseActivity implements FinRecordDe
         Toast.makeText(this,data.getReType(), Toast.LENGTH_LONG).show();
         tvOut.setText(data.getOutId() != null ? data.getOutId() : "");
         tvIn.setText(data.getInId() != null ? data.getInId() : "");
+        tvDept.setText(data.getDept() != null ? data.getDept():"");
     }
 
     @Override

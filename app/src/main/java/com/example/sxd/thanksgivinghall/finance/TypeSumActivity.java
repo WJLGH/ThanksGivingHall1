@@ -1,10 +1,12 @@
 package com.example.sxd.thanksgivinghall.finance;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -14,11 +16,14 @@ import com.example.sxd.thanksgivinghall.R;
 import com.example.sxd.thanksgivinghall.adapter.FinTypeSumListAdapter;
 import com.example.sxd.thanksgivinghall.bean.FinTypeSumListEntity;
 
+import org.w3c.dom.Text;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class TypeSumActivity extends AppCompatActivity implements TypeSumContract.View {
 
+    private static final String TAG = "TypeSumActivity";
 
     @BindView(R.id.tv_fin_type_title_amount)
     TextView tvAmount;
@@ -33,6 +38,7 @@ public class TypeSumActivity extends AppCompatActivity implements TypeSumContrac
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_type_sum);
         ButterKnife.bind(this);
         mPresenter = new TypeSumPresenterImpl(TypeSumActivity.this,this);
@@ -63,8 +69,8 @@ public class TypeSumActivity extends AppCompatActivity implements TypeSumContrac
     }
 
     private void getBusTypeDetail(String busType) {
-        Intent intent = new Intent(TypeSumActivity.this,FinRecordListActivity.class);
-        intent.putExtra("busType",busType);
+        Intent intent = new Intent(TypeSumActivity.this, FinRecordListActivity.class);
+        intent.putExtra("busType", busType);
         startActivity(intent);
     }
 

@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.sxd.thanksgivinghall.bean.Constants;
+import com.example.sxd.thanksgivinghall.finance.AccSumActivity;
 import com.example.sxd.thanksgivinghall.finance.DateSumActivity;
 import com.example.sxd.thanksgivinghall.finance.FinRecordAddActivity;
 import com.example.sxd.thanksgivinghall.finance.FinRecordDetailActivity;
@@ -78,8 +79,8 @@ public class FinanceStartActivity extends AppCompatActivity {
         Intent intent = null;
         switch (v.getId()) {
             case R.id.btn_start_acc_sum:
-                intent = new Intent();
-                intent.putExtra("acName",etAcc.getText().toString());
+                intent = new Intent(this,AccSumActivity.class);
+                intent.putExtra("id",etAcc.getText().toString());
                 break;
             case R.id.btn_start_date_sum:
                 intent = new Intent(this,DateSumActivity.class);

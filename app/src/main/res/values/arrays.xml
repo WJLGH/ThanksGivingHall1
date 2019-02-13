@@ -27,4 +27,9 @@
         <item>提现</item>
         <item>存款</item>
     </string-array>
+    <string-array name="dept">
+        <item>饭店</item>
+        <item>按摩院</item>
+        <item>开发室</item>
+    </string-array>
 </resources>

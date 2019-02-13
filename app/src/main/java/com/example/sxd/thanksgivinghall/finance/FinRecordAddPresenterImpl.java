@@ -5,6 +5,7 @@ import android.content.Context;
 import com.example.sxd.thanksgivinghall.api.ResultListener;
 import com.example.sxd.thanksgivinghall.base.BasePresenterImpl;
 import com.example.sxd.thanksgivinghall.bean.Base;
+import com.example.sxd.thanksgivinghall.bean.FinAccountListEntity;
 import com.example.sxd.thanksgivinghall.bean.FinRecordDetailEntity;
 import com.example.sxd.thanksgivinghall.notice.NoticeAddModelImpl;
 import com.example.sxd.thanksgivinghall.utils.StringUtils;
@@ -42,8 +43,10 @@ public class FinRecordAddPresenterImpl extends BasePresenterImpl implements FinR
         params.put("description",entity.getDescription());
         params.put("inId",entity.getInId());
         params.put("outId",entity.getOutId());
+        params.put("dept",entity.getDept());
         //时间字符串
         params.put("dateStr",entity.getNoteDate());
+        //entity.setDateStr(entity.getNoteDate());
 
         JSONObject jsonObj = new JSONObject(params);
         RequestBody requestBody = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), jsonObj.toString());
@@ -79,6 +82,31 @@ public class FinRecordAddPresenterImpl extends BasePresenterImpl implements FinR
         });
     }
 
+    @Override
+    public void requestAcList(final String type) {
+        this.mModel.requestAcList(new ResultListener<FinAccountListEntity>() {
+            @Override
+            public void onEnd() {
+
+            }
+
+            @Override
+            public void onFailure(String paramString) {
+                mView.showMessage(paramString);
+            }
+
+            @Override
+            public void onStart() {
+
+            }
+
+            @Override
+            public void onSuccess(FinAccountListEntity paramT) {
+                mView.fillInOutAcSpinner(paramT,type);
+            }
+        });
+    }
+
     private boolean checkParams(FinRecordDetailEntity.Data entity) {
         if(null == entity) {
             this.mView.showMessage("请填写明细信息");
@@ -104,14 +132,18 @@ public class FinRecordAddPresenterImpl extends BasePresenterImpl implements FinR
             this.mView.showMessage("日期不能为空");
             return false;
         }
+        if(!StringUtils.notIsBlankAndEmpty(entity.getDept())) {
+            this.mView.showMessage("部门不能为空");
+            return false;
+        }
         if(entity.getReType().equals("支出")) {
-            if(!StringUtils.notIsBlankAndEmpty(entity.getOutId())) {
-                this.mView.showMessage("出账账户不能为空");
+            if(!StringUtils.notIsBlankAndEmpty(entity.getOutId())||StringUtils.notIsBlankAndEmpty(entity.getInId())) {
+                this.mView.showMessage("出账账户不能为空且入账账户应该为空");
                 return false;
             }
         } else if(entity.getReType().equals("收入")) {
-            if(!StringUtils.notIsBlankAndEmpty(entity.getInId())) {
-                this.mView.showMessage("入账账户不能为空");
+            if(!StringUtils.notIsBlankAndEmpty(entity.getInId())||StringUtils.notIsBlankAndEmpty(entity.getOutId()) ) {
+                this.mView.showMessage("入账账户不能为空且出账账户应该为空");
                 return false;
             }
         } else if(entity.getReType().equals("转账")){

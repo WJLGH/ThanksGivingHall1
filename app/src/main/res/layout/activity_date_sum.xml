@@ -11,7 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:orientation="horizontal"
-        android:baselineAligned="true">
+        android:baselineAligned="true"
+        android:background="#FFCC00">
 
         <LinearLayout
             android:layout_width="0dp"
