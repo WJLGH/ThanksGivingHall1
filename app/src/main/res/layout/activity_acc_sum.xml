@@ -17,28 +17,32 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="账户名称" />
+            android:text="账户名称"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/textView7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="收入" />
+            android:text="收入"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="支出" />
+            android:text="支出"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/textView9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="结余" />
+            android:text="结余"
+            android:textSize="24sp" />
     </LinearLayout>
 
     <android.support.v7.widget.RecyclerView

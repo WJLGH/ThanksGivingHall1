@@ -115,6 +115,9 @@ public class MainFragment extends FragmentActivity{
                 if (tabId == R.id.tab3) {
                     mViewPager.setCurrentItem(2);
                 }
+                if(tabId == R.id.tab4) {
+                    mViewPager.setCurrentItem(3);
+                }
             }
         });
 
@@ -149,6 +152,7 @@ public class MainFragment extends FragmentActivity{
         fragmentList.add(new NoticeFragment());
         fragmentList.add(new TaskFragment());
         fragmentList.add(new MineFragment());
+        fragmentList.add(new FinStartFragment());
         fragmentManager = getSupportFragmentManager();
     }
     /**

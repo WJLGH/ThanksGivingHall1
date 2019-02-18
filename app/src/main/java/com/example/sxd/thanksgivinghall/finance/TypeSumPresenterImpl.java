@@ -19,10 +19,10 @@ class TypeSumPresenterImpl extends BasePresenterImpl implements TypeSumContract.
 
     @Override
     public void request(String reType) {
-        if(!StringUtils.notIsBlankAndEmpty(reType)) {
-            mView.showMessage("记录类型不能为空");
-            return;
-        }
+//        if(!StringUtils.notIsBlankAndEmpty(reType)) {
+//            mView.showMessage("记录类型不能为空");
+//            return;
+//        }
         mModel.request(reType, new ResultListener<FinTypeSumListEntity>() {
             @Override
             public void onEnd() {

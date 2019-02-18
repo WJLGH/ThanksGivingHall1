@@ -60,7 +60,7 @@ public class NoticeFragment extends Fragment {
 
 
         FragmentAdapter mFragmentAdapter =
-                new FragmentAdapter(getFragmentManager(), fragments, titles);
+                new FragmentAdapter(getChildFragmentManager(), fragments, titles);
         //给ViewPager设置适配器
         mViewPager.setAdapter(mFragmentAdapter);
         //将TabLayout和ViewPager关联起来。

@@ -23,4 +23,12 @@ public class Model {
     public void setImgUrl(int imgUrl) {
         this.imgUrl = imgUrl;
     }
+
+    public Model(String title, int imgUrl) {
+        this.title = title;
+        this.imgUrl = imgUrl;
+    }
+
+    public Model() {
+    }
 }

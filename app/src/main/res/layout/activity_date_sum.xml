@@ -24,20 +24,21 @@
             <TextView
                 android:id="@+id/fin_date_sum_title_year"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:gravity="center_horizontal"
+                android:layout_weight="1"
                 android:text="TextView"
                 android:textSize="24sp"
                 tools:text="2019" />
 
-            <TextView
-                android:id="@+id/fin_date_sum_title_date"
+            <Spinner
+                android:id="@+id/fin_date_sum_title_month"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:entries="@array/month"/>
 
-                android:gravity="center_horizontal"
-                android:text="XX-XX"
-                android:textSize="18sp" />
         </LinearLayout>
 
         <LinearLayout
