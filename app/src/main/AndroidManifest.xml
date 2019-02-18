@@ -71,7 +71,7 @@
         <!-- <activity android:name=".finance.DateSumActivity" /> -->
         <!-- <activity android:name=".finance.AccSumActivity" /> -->
         <activity android:name=".finance.FinRecordStatisticActivity"
-            android:screenOrientation="landscape"
+            android:screenOrientation="sensor"
             ></activity>
     </application>
 

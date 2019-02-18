@@ -65,8 +65,8 @@ public class ExpandFnFragment extends Fragment {
 
     private void initMenuOptions() {
         if(options.size() == 0) {
-            options.add(new Model("账户添加",R.mipmap.add_black, FinRecordStatisticActivity.class));
-            options.add(new Model("统计",R.mipmap.add_notice, null));
+            options.add(new Model("账户添加",R.mipmap.add_black, null));
+            options.add(new Model("统计",R.drawable.fin_statistics, FinRecordStatisticActivity.class));
             options.add(new Model("账户添加",R.mipmap.add_black, null));
         }
     }

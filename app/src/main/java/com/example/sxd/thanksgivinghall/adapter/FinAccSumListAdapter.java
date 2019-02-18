@@ -17,8 +17,8 @@ public class FinAccSumListAdapter extends BaseQuickAdapter<FinAccSumListEntity.D
     @Override
     protected void convert(BaseViewHolder helper, FinAccSumListEntity.Data item) {
         helper.setText(R.id.fin_acc_sum_ac_name,item.getAcName())
-                .setText(R.id.fin_acc_sum_in_amount,item.getInAmount())
-                .setText(R.id.fin_acc_sum_out_amount,item.getOutAmount())
-                .setText(R.id.fin_acc_sum_amount,item.getAmount());
+                .setText(R.id.fin_acc_sum_in_amount,String.format("%.2f",item.getInAmount()))
+                .setText(R.id.fin_acc_sum_out_amount,String.format("%.2f",-Math.abs(item.getOutAmount())))
+                .setText(R.id.fin_acc_sum_amount,String.format("%.2f",item.getAmount()));
     }
 }

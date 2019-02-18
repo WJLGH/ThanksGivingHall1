@@ -22,7 +22,7 @@ public class FinDateSumListAdapter extends BaseQuickAdapter<FinDateSumListEntity
     protected void convert(BaseViewHolder helper, FinDateSumListEntity.Data item) {
         helper.setText(R.id.fin_date_sum_item_amount,String.format("%.2f",item.getAmount()))
                 .setText(R.id.fin_date_sum_item_in_amount,String.format("%.2f",item.getInAmount()))
-                .setText(R.id.fin_date_sum_item_out_amount,String.format("%.2f",item.getOutAmount()))
+                .setText(R.id.fin_date_sum_item_out_amount,String.format("%.2f",-Math.abs(item.getOutAmount())))
                 .setText(R.id.fin_date_sum_item_date,item.getTime(mainDate))
                 .setText(R.id.fin_date_sum_item_year,item.getYear());
 

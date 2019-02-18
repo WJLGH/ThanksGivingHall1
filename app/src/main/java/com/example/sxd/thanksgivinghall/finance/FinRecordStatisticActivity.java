@@ -1,5 +1,6 @@
 package com.example.sxd.thanksgivinghall.finance;
 
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +10,7 @@ import com.example.sxd.thanksgivinghall.R;
 import com.example.sxd.thanksgivinghall.bean.FinDateSumListEntity;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.AxisBase;
+import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.components.LimitLine;
 import com.github.mikephil.charting.components.XAxis;
@@ -51,6 +53,14 @@ public class FinRecordStatisticActivity extends AppCompatActivity implements Fin
     private void initValue() {
         mPresenter.request("2019");
     }
+    public void onConfigurationChanged(Configuration newConfig) {
+// TODO Auto-generated method stubsuper.onConfigurationChanged(newConfig);
+        if (newConfig.orientation==Configuration.ORIENTATION_LANDSCAPE){
+
+        } else {
+// Nothing need to be done here
+        }
+    }
 
     /**
      * 初始化图表
@@ -92,7 +102,10 @@ public class FinRecordStatisticActivity extends AppCompatActivity implements Fin
         leftYAxis.enableGridDashedLine(10f, 10f, 60f);
         rightYaxis.setEnabled(false);
 
-
+        Description description = new Description();
+//        description.setText("需要展示的内容");
+        description.setEnabled(false);
+        lineChart.setDescription(description);
         /***折线图例 标签 设置***/
         legend = lineChart.getLegend();
         //设置显示类型，LINE CIRCLE SQUARE EMPTY 等等 多种方式，查看LegendForm 即可
@@ -132,21 +145,25 @@ public class FinRecordStatisticActivity extends AppCompatActivity implements Fin
         }
     }
     /**
-     * 展示曲线
-     *  @param dataList 数据集合
-     * @param name     曲线名称
-     * @param color    曲线颜色
+     * 添加曲线
      */
-    public void showLineChart(List<FinDateSumListEntity.Data> dataList, String name, int color) {
+    private void addLine(List<FinDateSumListEntity.Data> dataList, String name, int color,int type) {
         List<Entry> entries = new ArrayList<>();
-        xAxis.setLabelCount( dataList.size(),true);
         for (int i = 0; i < dataList.size(); i++) {
             FinDateSumListEntity.Data data = dataList.get(i);
-            /**
-             * 在此可查看 Entry构造方法，可发现 可传入数值 Entry(float x, float y)
-             * 也可传入Drawable， Entry(float x, float y, Drawable icon) 可在XY轴交点 设置Drawable图像展示
-             */
-            double d = data.getAmount();
+            double d = 0;
+            switch (type) {
+                case 0:
+                    d = data.getAmount();
+                    break;
+                case 1:
+                    d = data.getInAmount();
+                    break;
+                case -1 :
+                    d = Math.abs(data.getOutAmount());
+                    break;
+            }
+
             int month = 0;
             try {
                 month = new SimpleDateFormat("yyyy-MM").parse(data.getMonth()).getMonth() + 1;
@@ -159,7 +176,53 @@ public class FinRecordStatisticActivity extends AppCompatActivity implements Fin
         // 每一个LineDataSet代表一条线
         LineDataSet lineDataSet = new LineDataSet(entries, name);
         initLineDataSet(lineDataSet, color, LineDataSet.Mode.LINEAR);
-        LineData lineData = new LineData(lineDataSet);
+        lineChart.getLineData().addDataSet(lineDataSet);
+        lineChart.invalidate();
+    }
+    /**
+     * 展示曲线
+     *  @param dataList 数据集合
+     * @param name     曲线名称
+     * @param color    曲线颜色
+     */
+    public void showLineChart(List<FinDateSumListEntity.Data> dataList, String name, int color) {
+
+        List<Entry> entries = new ArrayList<>();
+        List<Entry> inEntries = new ArrayList<>();
+        List<Entry> outEntries = new ArrayList<>();
+
+        xAxis.setLabelCount( dataList.size(),true);
+        for (int i = 0; i < dataList.size(); i++) {
+            FinDateSumListEntity.Data data = dataList.get(i);
+            /**
+             * 在此可查看 Entry构造方法，可发现 可传入数值 Entry(float x, float y)
+             * 也可传入Drawable， Entry(float x, float y, Drawable icon) 可在XY轴交点 设置Drawable图像展示
+             */
+            double d = data.getAmount();
+            double outd = data.getOutAmount();
+            double ind = data.getInAmount();
+            int month = 0;
+            try {
+                month = new SimpleDateFormat("yyyy-MM").parse(data.getMonth()).getMonth() + 1;
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+            Entry entry = new Entry(month, (float) d);
+            Entry outE = new Entry(month, (float) outd);
+            Entry inE = new Entry(month, (float) ind);
+            entries.add(entry);
+            inEntries.add(inE);
+            outEntries.add(outE);
+        }
+        // 每一个LineDataSet代表一条线
+        LineDataSet lineDataSet = new LineDataSet(entries, name);
+        LineDataSet inLineDataSet = new LineDataSet(inEntries, "支出");
+        LineDataSet outLineDataSet = new LineDataSet(outEntries, "收入");
+
+        initLineDataSet(lineDataSet, color, LineDataSet.Mode.LINEAR);
+        initLineDataSet(inLineDataSet, color, LineDataSet.Mode.LINEAR);
+        initLineDataSet(outLineDataSet, color, LineDataSet.Mode.LINEAR);
+        LineData lineData = new LineData(lineDataSet,inLineDataSet,outLineDataSet);
         lineChart.setData(lineData);
     }
     @Override
@@ -170,7 +233,10 @@ public class FinRecordStatisticActivity extends AppCompatActivity implements Fin
 
     @Override
     public void requestSuccess(FinDateSumListEntity value) {
-        showLineChart(value.getData(), "我的收益", Color.CYAN);
+        showLineChart(value.getData(), "利润", Color.BLUE);
+//        addLine(value.getData(),"我的收益",Color.RED,0);
+        addLine(value.getData(),"我的支出",Color.RED,-1);
+//        addLine(value.getData(),"我的收入",Color.GREEN,1);
     }
 
     @Override

@@ -9,9 +9,9 @@ public class FinAccSumListEntity {
     public static class Data {
         String id;
         String acName;
-        String amount;
-        String inAmount;
-        String outAmount;
+        Double amount;
+        Double inAmount;
+        Double outAmount;
 
         public String getId() {
             return id;
@@ -29,27 +29,27 @@ public class FinAccSumListEntity {
             this.acName = acName;
         }
 
-        public String getAmount() {
+        public Double getAmount() {
             return amount;
         }
 
-        public void setAmount(String amount) {
+        public void setAmount(Double amount) {
             this.amount = amount;
         }
 
-        public String getInAmount() {
+        public Double getInAmount() {
             return inAmount;
         }
 
-        public void setInAmount(String inAmount) {
+        public void setInAmount(Double inAmount) {
             this.inAmount = inAmount;
         }
 
-        public String getOutAmount() {
+        public Double getOutAmount() {
             return outAmount;
         }
 
-        public void setOutAmount(String outAmount) {
+        public void setOutAmount(Double outAmount) {
             this.outAmount = outAmount;
         }
     }
