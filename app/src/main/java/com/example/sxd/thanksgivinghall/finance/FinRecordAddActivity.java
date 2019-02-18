@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.AppCompatTextView;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -17,10 +18,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.sxd.thanksgivinghall.R;
+import com.example.sxd.thanksgivinghall.base.BaseActivity;
 import com.example.sxd.thanksgivinghall.bean.Base;
 import com.example.sxd.thanksgivinghall.bean.Constants;
 import com.example.sxd.thanksgivinghall.bean.FinAccountListEntity;
 import com.example.sxd.thanksgivinghall.bean.FinRecordDetailEntity;
+import com.example.sxd.thanksgivinghall.notice.NoticeAddActivity;
+import com.example.sxd.thanksgivinghall.utils.StringUtils;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -33,7 +37,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.OnFocusChange;
 
-public class FinRecordAddActivity extends AppCompatActivity implements  FinRecordAddContract.View{
+public class FinRecordAddActivity extends BaseActivity implements  FinRecordAddContract.View {
 
 
     @BindView(R.id.et_fin_record_add_amount)
@@ -52,8 +56,6 @@ public class FinRecordAddActivity extends AppCompatActivity implements  FinRecor
     DatePicker dpNoteDate;
     @BindView(R.id.btn_fin_record_add_submit)
     Button btnSubmit;
-    @BindView(R.id.btn_fin_record_add_clear)
-    Button btnClear;
     @BindView(R.id.sp_fin_record_add_in_ac)
     Spinner spInAc;
     @BindView(R.id.sp_fin_record_add_out_ac)
@@ -68,8 +70,10 @@ public class FinRecordAddActivity extends AppCompatActivity implements  FinRecor
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fin_record_add);
+        setContentLayout(R.layout.activity_fin_record_add);
         ButterKnife.bind(this);
+        setTitle("新增记录");//设置标题
+        setBackArrow();//设置返回按钮和点击事件
         mPresenter = new FinRecordAddPresenterImpl(FinRecordAddActivity.this,this);
         initView();
     }
@@ -81,7 +85,10 @@ public class FinRecordAddActivity extends AppCompatActivity implements  FinRecor
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
 
-                AppCompatTextView textView = (AppCompatTextView) view;
+                TextView textView = (TextView) view;
+                if (view == null) {
+                    return;
+                }
                 String type = textView.getText().toString();
                 data.setReType(type);
                 initBusSpinner(type);
@@ -100,7 +107,10 @@ public class FinRecordAddActivity extends AppCompatActivity implements  FinRecor
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
                 //showMessage("选中的是第"+id+"个");
-                AppCompatTextView textView = (AppCompatTextView) view;
+                TextView textView = (TextView) view;
+                if (view == null) {
+                    return;
+                }
                 String busType = textView.getText().toString();
                 data.setBusType(busType);
             }
@@ -115,10 +125,13 @@ public class FinRecordAddActivity extends AppCompatActivity implements  FinRecor
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
                 //showMessage("选中的是第"+id+"个");
-                AppCompatTextView textView = (AppCompatTextView) view;
+                TextView textView = (TextView) view;
+                if (view == null) {
+                   return;
+                }
                 String dept = textView.getText().toString();
                 data.setDept(dept);
-                showMessage("选中的是"+dept);
+//                showMessage("选中的是"+dept);
             }
 
             @Override
@@ -126,6 +139,11 @@ public class FinRecordAddActivity extends AppCompatActivity implements  FinRecor
 
             }
         });
+
+    }
+
+    @Override
+    protected void setRightTitleOnClick(View v) {
 
     }
 
@@ -195,7 +213,12 @@ public class FinRecordAddActivity extends AppCompatActivity implements  FinRecor
 
     @OnClick(R.id.btn_fin_record_add_submit)
     public void submitData() {
-        Double amount = Double.parseDouble(etAmount.getText().toString());
+        String numStr = etAmount.getText().toString();
+        if (! StringUtils.notIsBlankAndEmpty(numStr)) {
+            showMessage("请输入金额");
+            return ;
+        }
+        Double amount = Double.parseDouble(numStr);
         //如果是支出金额为负数
         if(Constants.FIN_REOCRD_TYPE_OUT.equals(data.getReType())) {
             amount = - amount;

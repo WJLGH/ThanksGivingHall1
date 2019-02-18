@@ -1,6 +1,7 @@
 package com.example.sxd.thanksgivinghall.finance;
 
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,11 +22,14 @@ import com.example.sxd.thanksgivinghall.adapter.FinDateSumListAdapter;
 import com.example.sxd.thanksgivinghall.bean.FinDateSumListEntity;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import butterknife.Unbinder;
 
 public class DateSumActivity extends Fragment implements DateSumContract.View {
@@ -39,7 +44,6 @@ public class DateSumActivity extends Fragment implements DateSumContract.View {
     TextView tvOutAmount;
     @BindView(R.id.fin_date_sum_title_amount)
     TextView tvAmount ;
-   
     @BindView(R.id.rv_fin_date_sum_list)
     RecyclerView rvDateSumList;
     FinDateSumListAdapter mAdapter;
@@ -63,11 +67,17 @@ public class DateSumActivity extends Fragment implements DateSumContract.View {
         initView();
         return  view;
     }
-
+    @OnClick(R.id.fab)
+    public void addRecord() {
+        Intent intent = new Intent(getActivity(),FinRecordAddActivity.class);
+        startActivity(intent);
+    }
     private void initView() {
+
 //        String dateStr = null;
 //        Intent intent = getIntent();
 //        dateStr = intent.getStringExtra("dateStr");
+        initSpinner();
         year = new  SimpleDateFormat("yyyy").format(new Date());
         month = new SimpleDateFormat("MM").format(new Date());
         spMonth.setOnItemSelectedListener(new Spinner.OnItemSelectedListener() {
@@ -97,6 +107,14 @@ public class DateSumActivity extends Fragment implements DateSumContract.View {
         });
 
         mPresenter.request(year +"-"+month);
+    }
+
+    private void initSpinner() {
+        List<String> liststates =  Arrays.asList(getActivity().getResources().getStringArray(R.array.month));
+        ArrayAdapter adap = new ArrayAdapter<String>(getActivity(), R.layout.item_spinselect, liststates);
+        adap.setDropDownViewResource(R.layout.item_dialogspinselect);
+        spMonth.setAdapter(adap);
+
     }
 
     @Override
@@ -130,7 +148,7 @@ public class DateSumActivity extends Fragment implements DateSumContract.View {
     }
 
     private void getDateStrDetailList(String dateStr) {
-        showMessage(dateStr);
+//        showMessage(dateStr);
         Intent intent = new Intent(getActivity(),FinRecordListActivity.class);
         intent.putExtra("dateStr",dateStr);
         startActivity(intent);

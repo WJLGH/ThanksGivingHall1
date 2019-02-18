@@ -1,7 +1,6 @@
 package com.example.sxd.thanksgivinghall.finance;
 
-import android.content.Context;
-import android.net.Uri;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
@@ -10,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.example.sxd.thanksgivinghall.R;
 import com.example.sxd.thanksgivinghall.adapter.HomeAdapter;
 import com.example.sxd.thanksgivinghall.bean.Model;
@@ -50,13 +50,24 @@ public class ExpandFnFragment extends Fragment {
         rvFnList.setLayoutManager(gridLayoutManager);
         adapter = new HomeAdapter(R.layout.item_rv_mine, options);
         rvFnList.setAdapter(adapter);
+        adapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                Model model = options.get(position);
+                if (model != null) {
+                    Class page = model.getPage();
+                    Intent intent = new Intent(getActivity(),page);
+                    startActivity(intent);
+                }
+            }
+        });
     }
 
     private void initMenuOptions() {
         if(options.size() == 0) {
-            options.add(new Model("账户添加",R.mipmap.add_black));
-            options.add(new Model("统计",R.mipmap.add_notice));
-            options.add(new Model("账户添加",R.mipmap.add_black));
+            options.add(new Model("账户添加",R.mipmap.add_black, FinRecordStatisticActivity.class));
+            options.add(new Model("统计",R.mipmap.add_notice, null));
+            options.add(new Model("账户添加",R.mipmap.add_black, null));
         }
     }
 
