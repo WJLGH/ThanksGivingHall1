@@ -10,12 +10,12 @@ import java.util.List;
 public interface AccSumContract  {
     interface View extends BaseView<Presenter> {
         void showMessage(String msg);
-        void requestSuccess(List<FinAccSumListEntity.Data> data);
+        void requestSuccess(FinAccSumListEntity value);
     }
     interface  Presenter extends BasePresenter<View> {
-        void request(String id );
+        void request(String id ,String deptShortName);
     }
     interface  Model {
-        void request(String id , ResultListener<FinAccSumListEntity> result);
+        void request(String id ,String dept, ResultListener<FinAccSumListEntity> result);
     }
 }

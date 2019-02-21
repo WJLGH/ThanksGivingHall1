@@ -160,7 +160,7 @@ public class FinRecordStatisticActivity extends AppCompatActivity implements Fin
                     d = data.getInAmount();
                     break;
                 case -1 :
-                    d = Math.abs(data.getOutAmount());
+                    d = data.getOutAmount();
                     break;
             }
 
@@ -176,8 +176,9 @@ public class FinRecordStatisticActivity extends AppCompatActivity implements Fin
         // 每一个LineDataSet代表一条线
         LineDataSet lineDataSet = new LineDataSet(entries, name);
         initLineDataSet(lineDataSet, color, LineDataSet.Mode.LINEAR);
-        lineChart.getLineData().addDataSet(lineDataSet);
-        lineChart.invalidate();
+        LineData lineData = lineChart.getLineData();
+        lineData.addDataSet(lineDataSet);
+        lineChart.notifyDataSetChanged();
     }
     /**
      * 展示曲线
@@ -188,8 +189,6 @@ public class FinRecordStatisticActivity extends AppCompatActivity implements Fin
     public void showLineChart(List<FinDateSumListEntity.Data> dataList, String name, int color) {
 
         List<Entry> entries = new ArrayList<>();
-        List<Entry> inEntries = new ArrayList<>();
-        List<Entry> outEntries = new ArrayList<>();
 
         xAxis.setLabelCount( dataList.size(),true);
         for (int i = 0; i < dataList.size(); i++) {
@@ -199,8 +198,6 @@ public class FinRecordStatisticActivity extends AppCompatActivity implements Fin
              * 也可传入Drawable， Entry(float x, float y, Drawable icon) 可在XY轴交点 设置Drawable图像展示
              */
             double d = data.getAmount();
-            double outd = data.getOutAmount();
-            double ind = data.getInAmount();
             int month = 0;
             try {
                 month = new SimpleDateFormat("yyyy-MM").parse(data.getMonth()).getMonth() + 1;
@@ -208,22 +205,14 @@ public class FinRecordStatisticActivity extends AppCompatActivity implements Fin
                 e.printStackTrace();
             }
             Entry entry = new Entry(month, (float) d);
-            Entry outE = new Entry(month, (float) outd);
-            Entry inE = new Entry(month, (float) ind);
             entries.add(entry);
-            inEntries.add(inE);
-            outEntries.add(outE);
         }
         // 每一个LineDataSet代表一条线
         LineDataSet lineDataSet = new LineDataSet(entries, name);
-        LineDataSet inLineDataSet = new LineDataSet(inEntries, "支出");
-        LineDataSet outLineDataSet = new LineDataSet(outEntries, "收入");
-
         initLineDataSet(lineDataSet, color, LineDataSet.Mode.LINEAR);
-        initLineDataSet(inLineDataSet, color, LineDataSet.Mode.LINEAR);
-        initLineDataSet(outLineDataSet, color, LineDataSet.Mode.LINEAR);
-        LineData lineData = new LineData(lineDataSet,inLineDataSet,outLineDataSet);
+        LineData lineData = new LineData(lineDataSet);
         lineChart.setData(lineData);
+        lineChart.invalidate();
     }
     @Override
     public void showMessage(String message) {
@@ -233,10 +222,9 @@ public class FinRecordStatisticActivity extends AppCompatActivity implements Fin
 
     @Override
     public void requestSuccess(FinDateSumListEntity value) {
-        showLineChart(value.getData(), "利润", Color.BLUE);
-//        addLine(value.getData(),"我的收益",Color.RED,0);
+        showLineChart(value.getData(), "我的收益", Color.BLUE);
         addLine(value.getData(),"我的支出",Color.RED,-1);
-//        addLine(value.getData(),"我的收入",Color.GREEN,1);
+        addLine(value.getData(),"我的收入",Color.GREEN,1);
     }
 
     @Override

@@ -6,12 +6,31 @@ public class FinAccSumListEntity {
     private String success;
     private String statusMessage;
     private List<Data> data;
+    private Data mainData;
+
+    public Data getMainData() {
+        return mainData;
+    }
+
+    public void setMainData(Data mainData) {
+        this.mainData = mainData;
+    }
+
     public static class Data {
         String id;
         String acName;
         Double amount;
         Double inAmount;
         Double outAmount;
+        String dept;
+
+        public String getDept() {
+            return dept;
+        }
+
+        public void setDept(String dept) {
+            this.dept = dept;
+        }
 
         public String getId() {
             return id;

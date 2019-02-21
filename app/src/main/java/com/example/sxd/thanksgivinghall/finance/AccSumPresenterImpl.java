@@ -22,8 +22,8 @@ class AccSumPresenterImpl extends BasePresenterImpl implements AccSumContract.Pr
     }
 
     @Override
-    public void request(String id) {
-        this.mModel.request(id, new ResultListener<FinAccSumListEntity>() {
+    public void request(String id,String deptShortName) {
+        this.mModel.request(id, deptShortName,new ResultListener<FinAccSumListEntity>() {
             @Override
             public void onEnd() {
 
@@ -46,7 +46,7 @@ class AccSumPresenterImpl extends BasePresenterImpl implements AccSumContract.Pr
                     mView.showMessage("暂无数据");
                     return;
                 }
-                mView.requestSuccess(data);
+                mView.requestSuccess(paramT);
             }
         });
     }

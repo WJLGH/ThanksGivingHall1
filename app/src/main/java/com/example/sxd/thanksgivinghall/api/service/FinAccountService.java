@@ -17,5 +17,5 @@ public interface FinAccountService {
     Call<FinAccountListEntity> allAccount();
 
     @GET("infc/infcFinAccount/listSumAccount")
-    Call<FinAccSumListEntity> listSumAccount(@Query("id")String id );
+    Call<FinAccSumListEntity> listSumAccount(@Query("id")String id ,@Query("dept") String dept);
 }

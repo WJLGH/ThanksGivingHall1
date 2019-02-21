@@ -10,12 +10,14 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.example.sxd.thanksgivinghall.R;
 import com.example.sxd.thanksgivinghall.adapter.FinAccSumListAdapter;
 import com.example.sxd.thanksgivinghall.bean.FinAccSumListEntity;
+import com.example.sxd.thanksgivinghall.utils.DeptMapUtils;
 
 import java.util.List;
 
@@ -25,10 +27,15 @@ import butterknife.Unbinder;
 
 public class AccSumActivity extends Fragment implements AccSumContract.View{
 
+    @BindView(R.id.tv_main_dept)
+    TextView tvMainDept;
+    @BindView(R.id.tv_main_amount)
+    TextView tvMainAmount;
     @BindView(R.id.rv_acc_sum_list)
     RecyclerView rvList;
     FinAccSumListAdapter adapter;
     AccSumContract.Presenter mPresenter;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,7 +53,8 @@ public class AccSumActivity extends Fragment implements AccSumContract.View{
     public void initView() {
 //        Intent intent = getIntent();
 //        String id = intent.getStringExtra("id");
-        mPresenter.request(null);
+        String dept  = "amy";
+        mPresenter.request(null,dept);
     }
 
     @Override
@@ -55,7 +63,11 @@ public class AccSumActivity extends Fragment implements AccSumContract.View{
     }
 
     @Override
-    public void requestSuccess(final List<FinAccSumListEntity.Data> data) {
+    public void requestSuccess(final FinAccSumListEntity value) {
+        final List<FinAccSumListEntity.Data> data = value.getData();
+        FinAccSumListEntity.Data mainData = value.getMainData();
+        tvMainDept.setText(DeptMapUtils.getFullName(mainData.getDept()));
+        tvMainAmount.setText(String.format("%.2f",mainData.getAmount()));
         adapter = new FinAccSumListAdapter(R.layout.fin_acc_sum_item,data);
         rvList.setAdapter(adapter);
         rvList.setLayoutManager(new LinearLayoutManager(getContext()));

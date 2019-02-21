@@ -15,6 +15,25 @@ public class FinTypeSumListEntity {
         private String reType;
         private Double amount;
         private String busType;
+        private Double inAmount;
+        private Double outAmount;
+
+        public Double getInAmount() {
+            return inAmount;
+        }
+
+        public void setInAmount(Double inAmount) {
+            this.inAmount = inAmount;
+        }
+
+        public Double getOutAmount() {
+            return outAmount;
+        }
+
+        public void setOutAmount(Double outAmount) {
+            this.outAmount = outAmount;
+        }
+
         public void setReType(String reType) {
             this.reType = reType;
         }

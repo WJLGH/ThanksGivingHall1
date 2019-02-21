@@ -32,10 +32,11 @@ public class TypeSumActivity extends Fragment implements TypeSumContract.View {
 
     private static final String TAG = "TypeSumActivity";
 
-    @BindView(R.id.tv_fin_type_title_amount)
-    TextView tvAmount;
-    @BindView(R.id.tv_fin_type_title_re_type)
-    TextView tvReType;
+    @BindView(R.id.tv_main_in_amount)
+    TextView tvInAmount;
+    @BindView(R.id.tv_main_out_amount)
+    TextView tvOutAmount;
+
     @BindView(R.id.tv_fin_type_sum_list)
     RecyclerView rvTypeSumList;
 
@@ -68,8 +69,8 @@ public class TypeSumActivity extends Fragment implements TypeSumContract.View {
 
     private void fillView(final FinTypeSumListEntity value) {
         FinTypeSumListEntity.Data mainData = value.getMainData();
-        tvReType.setText(mainData.getReType());
-        tvAmount.setText(String.format("%.2f",mainData.getAmount()));
+        tvInAmount.setText(String.format("%.2f",mainData.getInAmount()));
+        tvOutAmount.setText(String.format("%.2f",mainData.getOutAmount()));
         mAdapter = new FinTypeSumListAdapter(R.layout.fin_type_sum_item,value.getData());
         mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override

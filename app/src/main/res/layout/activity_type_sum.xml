@@ -9,34 +9,61 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="80dp"
         android:orientation="horizontal">
 
         <LinearLayout
-            android:padding="8dp"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:orientation="vertical"
             android:layout_weight="3"
-            android:background="@color/ocean_blue">
+            android:background="@color/ocean_blue"
+            android:orientation="vertical"
+            android:padding="8dp">
 
             <TextView
-                android:id="@+id/tv_fin_type_title_re_type"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
+                android:gravity="center"
                 android:text="收入"
                 android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/tv_fin_type_title_amount"
+                android:id="@+id/tv_main_in_amount"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="2"
+                android:gravity="center"
                 android:text="0.00"
                 android:textSize="30sp" />
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:background="@color/ocean_blue"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="支出"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tv_main_out_amount"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="0.00"
+                android:textSize="30sp" />
+        </LinearLayout>
+
     </LinearLayout>
 
     <android.support.v7.widget.RecyclerView

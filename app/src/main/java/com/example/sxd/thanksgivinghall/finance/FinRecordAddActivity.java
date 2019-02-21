@@ -1,5 +1,6 @@
 package com.example.sxd.thanksgivinghall.finance;
 
+import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
@@ -39,7 +40,7 @@ import butterknife.OnFocusChange;
 
 public class FinRecordAddActivity extends BaseActivity implements  FinRecordAddContract.View {
 
-
+    private static final String TAG = "FinRecordAddActivity";
     @BindView(R.id.et_fin_record_add_amount)
     EditText etAmount;
     @BindView(R.id.et_fin_record_add_desc)
@@ -147,6 +148,7 @@ public class FinRecordAddActivity extends BaseActivity implements  FinRecordAddC
 
     }
 
+    @SuppressLint("NewApi")
     private void initNoteDateDatePicker() {
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(System.currentTimeMillis());
@@ -156,10 +158,18 @@ public class FinRecordAddActivity extends BaseActivity implements  FinRecordAddC
         //默认是今天
         data.setNoteDate(String.format("%d-%02d-%02d",year,month+1,dayofMonth));
 
+//        dpNoteDate.setOnDateChangedListener(new DatePicker.OnDateChangedListener() {
+//            @Override
+//            public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+//                Log.i(TAG, "选择");
+//            }
+//        });
+
         dpNoteDate.init(year, month, dayofMonth, new DatePicker.OnDateChangedListener() {
             @Override
             public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
                 data.setNoteDate(String.format("%d-%02d-%02d",year,monthOfYear+1,dayOfMonth));
+                Log.i(TAG, "选择");
             }
         });
     }

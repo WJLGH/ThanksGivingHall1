@@ -95,18 +95,22 @@ public class DateSumActivity extends Fragment implements DateSumContract.View {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                String[] strings = getActivity().getResources().getStringArray(R.array.month);
-
-                for (int i = 0;i<strings.length;i++) {
-                    if(month.equals(strings[i])) {
-                        spMonth.setSelection(i);
-                        break;
-                    }
-                }
+                synDp();
             }
         });
-
+        synDp() ;
         mPresenter.request(year +"-"+month);
+    }
+
+    private void synDp() {
+        String[] strings = getActivity().getResources().getStringArray(R.array.month);
+
+        for (int i = 0;i<strings.length;i++) {
+            if(month.equals(strings[i])) {
+                spMonth.setSelection(i);
+                break;
+            }
+        }
     }
 
     private void initSpinner() {

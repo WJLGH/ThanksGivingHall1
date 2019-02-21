@@ -10,16 +10,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="2"
+        android:gravity="center"
         android:text="服务收入"
-        android:textSize="20sp" />
-
-    <TextView
-        android:id="@+id/fin_type_item_amount"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="2"
-        android:gravity="right"
-        android:text="223.6"
         android:textSize="20sp" />
 
     <ImageView
@@ -28,4 +20,14 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         app:srcCompat="@mipmap/tree_ec" />
+
+    <TextView
+        android:id="@+id/fin_type_item_amount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:text="223.6"
+        android:textSize="20sp" />
+
 </LinearLayout>

@@ -4,36 +4,40 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/camera_pop_normal">
-   <TextView
-    android:id="@+id/fin_acc_sum_ac_name"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:layout_weight="2"
-    android:text="账户"
-    android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/fin_acc_sum_ac_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2.3"
+        android:gravity="center"
+        android:text="账户"
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/fin_acc_sum_in_amount"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="2"
-        android:gravity="right"
+        android:gravity="center"
         android:text="0.0"
         android:textSize="20sp" />
+
     <TextView
         android:id="@+id/fin_acc_sum_out_amount"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="2"
-        android:gravity="right"
+        android:gravity="center"
         android:text="0.0"
         android:textSize="20sp" />
+
     <TextView
         android:id="@+id/fin_acc_sum_amount"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="2"
-        android:gravity="right"
+        android:gravity="center"
         android:text="0.0"
         android:textSize="20sp" />
 

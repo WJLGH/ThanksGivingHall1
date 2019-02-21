@@ -1,7 +1,8 @@
 package com.example.sxd.thanksgivinghall.finance;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import android.graphics.Color;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -11,36 +12,52 @@ import android.widget.Toast;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.example.sxd.thanksgivinghall.R;
 import com.example.sxd.thanksgivinghall.adapter.FinRecordListAdapter;
+import com.example.sxd.thanksgivinghall.base.BaseActivity;
 import com.example.sxd.thanksgivinghall.bean.FinRecordListEntity;
-import com.example.sxd.thanksgivinghall.notice.NoticeDetailActivity;
 
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class FinRecordListActivity extends AppCompatActivity implements FinRecordListContract.View {
+public class FinRecordListActivity extends BaseActivity implements FinRecordListContract.View {
 
 
     @BindView(R.id.rv_fin_record_list)
     RecyclerView rvFinRecordList;
+    @BindView(R.id.swipeLayout)
+    SwipeRefreshLayout swipeLayout;
 
     private FinRecordListContract.Presenter mPresenter;
     private FinRecordListAdapter mAdapter;
-    ;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fin_record_list);
+        setContentLayout(R.layout.activity_fin_record_list);
         ButterKnife.bind(this);
+        setTitle("记录明细");//设置标题
+        setBackArrow();//设置返回按钮和点击事件
         mPresenter = new FinRecordListPresenterImpl(FinRecordListActivity.this,this);
         initView();
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        initData();
+    }
+
+    public void initView() {
+        swipeLayout.setColorSchemeColors(Color.rgb(47, 223, 189));
+        swipeLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                initData();
+                swipeLayout.setRefreshing(false);//刷新事件结束，隐藏刷新进度条
+            }
+        });
+    }
     /**
      * 设置请求的参数 可以是：
      *  busType
@@ -48,7 +65,7 @@ public class FinRecordListActivity extends AppCompatActivity implements FinRecor
      *  account  or acName
      *  dateStr
      */
-    public  void initView() {
+    public  void initData() {
         Intent intent = getIntent();
         //账户类型
         String id = intent.getStringExtra("id");
@@ -81,6 +98,11 @@ public class FinRecordListActivity extends AppCompatActivity implements FinRecor
     }
 
     @Override
+    protected void setRightTitleOnClick(View v) {
+
+    }
+
+    @Override
     public void showMessage(String message) {
         Toast.makeText(this,message, Toast.LENGTH_SHORT).show();
     }
@@ -102,6 +124,18 @@ public class FinRecordListActivity extends AppCompatActivity implements FinRecor
                 startActivity(intent);
             }
         });
+        mAdapter.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() {
+            @Override
+            public void onLoadMoreRequested() {
+                rvFinRecordList.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                            //数据全部加载完毕
+                            mAdapter.loadMoreEnd();
+                    }
+                }, 800);
+            }
+        }, rvFinRecordList);
     }
 
     @Override

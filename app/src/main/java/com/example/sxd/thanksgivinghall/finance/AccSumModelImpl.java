@@ -15,8 +15,8 @@ class AccSumModelImpl implements AccSumContract.Model {
     }
 
     @Override
-    public void request(String id, final ResultListener<FinAccSumListEntity> result) {
-        Call<FinAccSumListEntity> call = AppMainService.getFinAccountService(baseUrl).listSumAccount(id);
+    public void request(String id,String dept, final ResultListener<FinAccSumListEntity> result) {
+        Call<FinAccSumListEntity> call = AppMainService.getFinAccountService(baseUrl).listSumAccount(id,dept);
         result.onStart();
         call.enqueue(new Callback<FinAccSumListEntity>() {
             @Override
