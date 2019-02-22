@@ -26,7 +26,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="收入"
+                android:text="餐厅"
                 android:textSize="18sp" />
 
             <TextView

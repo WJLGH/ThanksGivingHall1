@@ -1,6 +1,8 @@
 package com.example.sxd.thanksgivinghall.finance;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -10,6 +12,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -71,9 +74,14 @@ public class AccSumActivity extends Fragment implements AccSumContract.View{
         adapter = new FinAccSumListAdapter(R.layout.fin_acc_sum_item,data);
         rvList.setAdapter(adapter);
         rvList.setLayoutManager(new LinearLayoutManager(getContext()));
+
         adapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+//                ImageView imageView = view.findViewById(R.id.imageView);
+//                imageView.setDrawingCacheEnabled(true);
+//                Bitmap bitmap = Bitmap.createBitmap(imageView.getDrawingCache());
+//                imageView.setDrawingCacheEnabled(false);
                 String id = data.get(position).getId();
                 getAccDetailList(id);
             }
