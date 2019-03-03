@@ -20,21 +20,15 @@
         <item>转账</item>
     </string-array>
     <string-array name="busTypeIn">
-        <item>服务收入</item>
-        <item>饭店收入</item>
-        <item>小吃收入</item>
-        <item>程序收入</item>
-        <item>借款收入</item>
+        <item>营业收入</item>
+        <item>项目收入</item>
         <item>其他收入</item>
     </string-array>
     <string-array name="busTypeOut">
-        <item>材料支出</item>
-        <item>房租支出</item>
-        <item>水电支出</item>
-        <item>税费支出</item>
-        <item>出差支出</item>
-        <item>招待支出</item>
-        <item>社保支出</item>
+        <item>电费物业</item>
+        <item>采购支出</item>
+        <item>出行费</item>
+        <item>活动建设</item>
         <item>其他支出</item>
     </string-array>
     <string-array name="busTypeCh">

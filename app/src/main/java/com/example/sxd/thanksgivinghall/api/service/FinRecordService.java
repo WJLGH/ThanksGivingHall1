@@ -57,6 +57,14 @@ public interface FinRecordService {
     Call<FinRecordListEntity> requestDateList(@Query("dateStr")String dateStr);
 
     /**
+     * 删除一条记录信息
+     * @param id
+     * @return
+     */
+    @GET("infc/infcFinRecord/deleteFinRecord")
+    Call<Base> requestDeleteRecord(@Query("id") String id) ;
+
+    /**
      * 根据ID获取特定的明细记录详情
      * @param recordId
      * @return

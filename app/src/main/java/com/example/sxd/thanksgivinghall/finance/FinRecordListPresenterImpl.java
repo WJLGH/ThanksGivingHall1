@@ -3,8 +3,10 @@ package com.example.sxd.thanksgivinghall.finance;
 import android.content.Context;
 import android.view.View;
 
+import com.example.sxd.thanksgivinghall.R;
 import com.example.sxd.thanksgivinghall.api.ResultListener;
 import com.example.sxd.thanksgivinghall.base.BasePresenterImpl;
+import com.example.sxd.thanksgivinghall.bean.Base;
 import com.example.sxd.thanksgivinghall.bean.FinRecordListEntity;
 
 import java.util.List;
@@ -52,6 +54,39 @@ public class FinRecordListPresenterImpl  extends BasePresenterImpl implements  F
             return ;
         }
         this.mModel.requestDateList(dateStr,mResultLisener);
+    }
+
+    @Override
+    public void requestDeleteRecord(String id) {
+        mModel.requestDeleteRecord(id, new ResultListener<Base>() {
+            @Override
+            public void onEnd() {
+
+            }
+
+            @Override
+            public void onFailure(String paramString) {
+                mView.showMessage(paramString);
+            }
+
+            @Override
+            public void onStart() {
+
+            }
+
+            @Override
+            public void onSuccess(Base data) {
+                if (data != null) {
+                    if(data.getSuccess().equals("true")) {
+                        mView.showMessage("删除成功");
+                    }else{
+                        mView.showMessage(data.getStatusMessage());
+                    }
+                } else {
+                    mView.showMessage("删除失败");
+                }
+            }
+        });
     }
 
     private class MyResultLisener implements ResultListener<FinRecordListEntity> {

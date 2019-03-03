@@ -18,6 +18,15 @@ public class FinRecordDetailEntity {
         private  String outId;
         private String noteDate;//时间字符串
         private String dateStr;
+        private FinGood good;
+
+        public FinGood getGood() {
+            return good;
+        }
+
+        public void setGood(FinGood good) {
+            this.good = good;
+        }
 
         public String getDateStr() {
             return dateStr;

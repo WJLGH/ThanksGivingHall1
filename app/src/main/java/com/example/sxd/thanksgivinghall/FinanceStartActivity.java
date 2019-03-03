@@ -117,7 +117,7 @@ public class FinanceStartActivity extends AppCompatActivity {
                 startActivity(intent);
                 break;
             case R.id.bt_fin_start_detail:
-                Intent intent1 = new Intent(FinanceStartActivity.this,FinRecordDetailActivity.class);
+                Intent intent1 = new Intent(FinanceStartActivity.this,FinRecordAddActivity.class);
                 startActivity(intent1);
                 break;
             case R.id.bt_fin_start_set:

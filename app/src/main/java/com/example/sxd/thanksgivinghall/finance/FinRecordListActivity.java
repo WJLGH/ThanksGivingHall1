@@ -1,11 +1,14 @@
 package com.example.sxd.thanksgivinghall.finance;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -22,7 +25,7 @@ import butterknife.ButterKnife;
 
 public class FinRecordListActivity extends BaseActivity implements FinRecordListContract.View {
 
-
+    private static final String TAG = "FinRecordListActivity";
     @BindView(R.id.rv_fin_record_list)
     RecyclerView rvFinRecordList;
     @BindView(R.id.swipeLayout)
@@ -38,7 +41,7 @@ public class FinRecordListActivity extends BaseActivity implements FinRecordList
         ButterKnife.bind(this);
         setTitle("记录明细");//设置标题
         setBackArrow();//设置返回按钮和点击事件
-        mPresenter = new FinRecordListPresenterImpl(FinRecordListActivity.this,this);
+        mPresenter = new FinRecordListPresenterImpl(FinRecordListActivity.this, this);
         initView();
     }
 
@@ -58,40 +61,43 @@ public class FinRecordListActivity extends BaseActivity implements FinRecordList
             }
         });
     }
+
     /**
      * 设置请求的参数 可以是：
-     *  busType
-     *  startDate endDate
-     *  account  or acName
-     *  dateStr
+     * busType
+     * startDate endDate
+     * account  or acName
+     * dateStr
      */
-    public  void initData() {
+    public void initData() {
         Intent intent = getIntent();
         //账户类型
         String id = intent.getStringExtra("id");
         String acName = intent.getStringExtra("acName");
-        if(id != null || acName != null ) {
-            mPresenter.requestAccList(id,acName);
+        if (id != null || acName != null) {
+            mPresenter.requestAccList(id, acName);
             return;
         }
         //交易类型
         String busType = intent.getStringExtra("busType");
-        if(busType != null) {
+        if (busType != null) {
             mPresenter.requestBusTypeList(busType);
             return;
         }
         //时间类型
         String dateStr = intent.getStringExtra("dateStr");
-        if(dateStr != null) {
+        if (dateStr != null) {
             mPresenter.requestDateList(dateStr);
             return;
         }
         //时间段类型
-        String startDate = intent.getStringExtra("startDate");;
-        String endDate = intent.getStringExtra("endDate");;
+        String startDate = intent.getStringExtra("startDate");
+        ;
+        String endDate = intent.getStringExtra("endDate");
+        ;
         //startDate = endDate = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
-        if(startDate != null && endDate != null) {
-            mPresenter.requestStartToEndList(startDate,endDate);
+        if (startDate != null && endDate != null) {
+            mPresenter.requestStartToEndList(startDate, endDate);
             return;
         }
 
@@ -104,7 +110,7 @@ public class FinRecordListActivity extends BaseActivity implements FinRecordList
 
     @Override
     public void showMessage(String message) {
-        Toast.makeText(this,message, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -112,16 +118,42 @@ public class FinRecordListActivity extends BaseActivity implements FinRecordList
         fillRecyclerView(value.getData());
     }
 
-    public  void fillRecyclerView(final  List<FinRecordListEntity.Data> data) {
-        mAdapter = new FinRecordListAdapter(R.layout.fin_record_item,data);
+    public void fillRecyclerView(final List<FinRecordListEntity.Data> data) {
+        mAdapter = new FinRecordListAdapter(R.layout.fin_record_item, data);
         rvFinRecordList.setLayoutManager(new LinearLayoutManager(this));
         rvFinRecordList.setAdapter(mAdapter);
         mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter mAdapter, View view, int position) {
-                Intent intent = new Intent(FinRecordListActivity.this,FinRecordDetailActivity.class);
+                Intent intent = new Intent(FinRecordListActivity.this, FinRecordAddActivity.class);
                 intent.putExtra("id", data.get(position).getId());
                 startActivity(intent);
+            }
+        });
+        mAdapter.setOnItemLongClickListener(new BaseQuickAdapter.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(BaseQuickAdapter adapter, View view, final int position) {
+                Log.d(TAG, "onItemLongClick: ");
+                final String id = data.get(position).getId();
+                // 创建构建器
+                AlertDialog.Builder builder = new AlertDialog.Builder(FinRecordListActivity.this);
+                // 设置参数
+                builder.setTitle("删除记录")
+                        .setMessage("是否要要删除此条记录")
+                        .setPositiveButton("是", new DialogInterface.OnClickListener() {// 积极
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                mPresenter.requestDeleteRecord(id);
+                            }
+                        }).setNegativeButton("否", new DialogInterface.OnClickListener() {// 消极
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                showMessage("取消");
+                            }
+                        });
+                builder.create().show();
+                //true 长按事件不会触发点击事件 false :会触发
+                return true;
             }
         });
         mAdapter.setOnLoadMoreListener(new BaseQuickAdapter.RequestLoadMoreListener() {
@@ -130,8 +162,8 @@ public class FinRecordListActivity extends BaseActivity implements FinRecordList
                 rvFinRecordList.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                            //数据全部加载完毕
-                            mAdapter.loadMoreEnd();
+                        //数据全部加载完毕
+                        mAdapter.loadMoreEnd();
                     }
                 }, 800);
             }

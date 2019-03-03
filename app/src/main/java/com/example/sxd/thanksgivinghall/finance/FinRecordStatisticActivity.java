@@ -166,7 +166,7 @@ public class FinRecordStatisticActivity extends AppCompatActivity implements Fin
 
             int month = 0;
             try {
-                month = new SimpleDateFormat("yyyy-MM").parse(data.getMonth()).getMonth() + 1;
+                month = new SimpleDateFormat("yyyy-MM").parse(data.getDateStr()).getMonth() + 1;
             } catch (ParseException e) {
                 e.printStackTrace();
             }
@@ -182,6 +182,31 @@ public class FinRecordStatisticActivity extends AppCompatActivity implements Fin
     }
     /**
      * 展示曲线
+     *
+     * @param dataList 数据集合
+     * @param name     曲线名称
+     * @param color    曲线颜色
+     */
+    public void showLineChart1(List<FinDateSumListEntity.Data> dataList, String name, int color) {
+        List<Entry> entries = new ArrayList<>();
+        for (int i = 0; i < dataList.size(); i++) {
+            FinDateSumListEntity.Data  data = dataList.get(i);
+            /**
+             * 在此可查看 Entry构造方法，可发现 可传入数值 Entry(float x, float y)
+             * 也可传入Drawable， Entry(float x, float y, Drawable icon) 可在XY轴交点 设置Drawable图像展示
+             */
+            double d = data.getAmount();
+            Entry entry = new Entry(i, (float) d);
+            entries.add(entry);
+        }
+        // 每一个LineDataSet代表一条线
+        LineDataSet lineDataSet = new LineDataSet(entries, name);
+        initLineDataSet(lineDataSet, color, LineDataSet.Mode.LINEAR);
+        LineData lineData = new LineData(lineDataSet);
+        lineChart.setData(lineData);
+    }
+    /**
+     * 展示曲线
      *  @param dataList 数据集合
      * @param name     曲线名称
      * @param color    曲线颜色
@@ -190,13 +215,14 @@ public class FinRecordStatisticActivity extends AppCompatActivity implements Fin
 
         List<Entry> entries = new ArrayList<>();
 
-        xAxis.setLabelCount( dataList.size(),true);
+        //xAxis.setLabelCount( dataList.size(),true);
         for (int i = 0; i < dataList.size(); i++) {
             FinDateSumListEntity.Data data = dataList.get(i);
             /**
              * 在此可查看 Entry构造方法，可发现 可传入数值 Entry(float x, float y)
              * 也可传入Drawable， Entry(float x, float y, Drawable icon) 可在XY轴交点 设置Drawable图像展示
              */
+            //注意这里添加的时候必须是 按照增序添加，否则会出现异常
             double d = data.getAmount();
             int month = 0;
             try {
@@ -212,7 +238,7 @@ public class FinRecordStatisticActivity extends AppCompatActivity implements Fin
         initLineDataSet(lineDataSet, color, LineDataSet.Mode.LINEAR);
         LineData lineData = new LineData(lineDataSet);
         lineChart.setData(lineData);
-        lineChart.invalidate();
+//        lineChart.invalidate();
     }
     @Override
     public void showMessage(String message) {

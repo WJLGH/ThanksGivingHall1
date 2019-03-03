@@ -2,6 +2,7 @@ package com.example.sxd.thanksgivinghall.finance;
 
 import com.example.sxd.thanksgivinghall.api.AppMainService;
 import com.example.sxd.thanksgivinghall.api.ResultListener;
+import com.example.sxd.thanksgivinghall.bean.Base;
 import com.example.sxd.thanksgivinghall.bean.FinRecordListEntity;
 
 import retrofit2.Call;
@@ -58,5 +59,24 @@ public class FinRecordListModelImpl implements FinRecordListContract.Model {
         Call<FinRecordListEntity> call = AppMainService.getFinRecordService(baseUrl).requestDateList(dateStr);
         result.onStart();
         call.enqueue(new MyCallBack(result));
+    }
+
+    @Override
+    public void requestDeleteRecord(String id, final ResultListener<Base> result) {
+        Call<Base> call = AppMainService.getFinRecordService(baseUrl).requestDeleteRecord(id);
+        result.onStart();
+        call.enqueue(new Callback<Base>() {
+            @Override
+            public void onResponse(Call<Base> call, Response<Base> response) {
+                result.onSuccess(response.body());
+                result.onEnd();
+            }
+
+            @Override
+            public void onFailure(Call<Base> call, Throwable t) {
+                result.onFailure(t.getMessage());
+                result.onEnd();
+            }
+        });
     }
 }

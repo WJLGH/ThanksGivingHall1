@@ -5,11 +5,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.sxd.thanksgivinghall.R;
 import com.example.sxd.thanksgivinghall.base.BaseActivity;
+import com.example.sxd.thanksgivinghall.bean.FinGood;
 import com.example.sxd.thanksgivinghall.bean.FinRecordDetailEntity;
 
 import butterknife.BindView;
@@ -18,6 +21,8 @@ import butterknife.OnClick;
 
 public class FinRecordDetailActivity extends BaseActivity implements FinRecordDetailContract.View {
 
+    @BindView(R.id.good_detail)
+    LinearLayout goodDetail;
     @BindView(R.id.tv_fin_record_detail_bustype)
     TextView tvBusType;
     @BindView(R.id.tv_fin_record_detail_in)
@@ -100,6 +105,24 @@ public class FinRecordDetailActivity extends BaseActivity implements FinRecordDe
         tvOut.setText(data.getOutId() != null ? data.getOutId() : "");
         tvIn.setText(data.getInId() != null ? data.getInId() : "");
         tvDept.setText(data.getDept() != null ? data.getDept():"");
+        FinGood good = data.getGood();
+        if (good != null) {
+            goodDetail.setVisibility(View.VISIBLE);
+            final EditText etGoodName = this.findViewById(R.id.et_good_name);
+            final EditText etPrice = this.findViewById(R.id.et_price);
+            final EditText etQuantity = this.findViewById(R.id.et_quantity);
+            final EditText etUnit = this.findViewById(R.id.et_unit);
+            final EditText etSupplier = this.findViewById(R.id.et_supplier);
+            final EditText etSpaAddress = this.findViewById(R.id.et_sp_address);
+            final EditText etBuyer = this.findViewById(R.id.et_buyer);
+            etGoodName.setText(good.getGoodName());
+            etPrice.setText(String.format("%.2f",good.getPrice()));
+            etQuantity.setText(String.format("%.2f",good.getQuantity()));
+            etUnit.setText(good.getUnit());
+            etSpaAddress.setText(good.getSpAddress());
+            etSupplier.setText(good.getSupplier());
+            etBuyer.setText(good.getBuyer());
+        }
     }
 
     @Override

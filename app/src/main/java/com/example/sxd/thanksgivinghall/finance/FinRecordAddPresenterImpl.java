@@ -2,10 +2,12 @@ package com.example.sxd.thanksgivinghall.finance;
 
 import android.content.Context;
 
+import com.example.sxd.thanksgivinghall.R;
 import com.example.sxd.thanksgivinghall.api.ResultListener;
 import com.example.sxd.thanksgivinghall.base.BasePresenterImpl;
 import com.example.sxd.thanksgivinghall.bean.Base;
 import com.example.sxd.thanksgivinghall.bean.FinAccountListEntity;
+import com.example.sxd.thanksgivinghall.bean.FinGood;
 import com.example.sxd.thanksgivinghall.bean.FinRecordDetailEntity;
 import com.example.sxd.thanksgivinghall.notice.NoticeAddModelImpl;
 import com.example.sxd.thanksgivinghall.utils.StringUtils;
@@ -23,6 +25,7 @@ import okhttp3.ResponseBody;
 
 public class FinRecordAddPresenterImpl extends BasePresenterImpl implements FinRecordAddContract.Presenter {
     private FinRecordAddContract.View mView;
+    public  static String hasGoodBusType = "采购支出";
     private  FinRecordAddContract.Model mModel;
     private Context context;
 
@@ -37,6 +40,7 @@ public class FinRecordAddPresenterImpl extends BasePresenterImpl implements FinR
         if (!checkParams(entity)) return;
 
         Map<String ,Object> params = new LinkedHashMap<>();
+        params.put("id",entity.getId());
         params.put("reType",entity.getReType());
         params.put("busType",entity.getBusType());
         params.put("amount",entity.getAmount());
@@ -45,7 +49,21 @@ public class FinRecordAddPresenterImpl extends BasePresenterImpl implements FinR
         params.put("outId",entity.getOutId());
         params.put("dept",entity.getDept());
         //时间字符串
-        params.put("dateStr",entity.getNoteDate());
+        params.put("noteDate",entity.getNoteDate());
+        if(hasGoodBusType.equals(entity.getBusType()) && entity.getGood() != null) {
+            FinGood finGood = entity.getGood();
+            Map<String ,Object> good = new LinkedHashMap<>();
+            good.put("goodName",finGood.getGoodName());
+            good.put("price",finGood.getPrice());
+            good.put("quantity",finGood.getQuantity());
+            good.put("unit",finGood.getUnit());
+            good.put("supplier",finGood.getSupplier());
+            good.put("spAddress",finGood.getSpAddress());
+            good.put("buyer",finGood.getBuyer());
+            good.put("id",finGood.getId());
+            good.put("reId",finGood.getId());
+            params.put("finGood",good);
+        }
         //entity.setDateStr(entity.getNoteDate());
 
         JSONObject jsonObj = new JSONObject(params);
@@ -107,6 +125,39 @@ public class FinRecordAddPresenterImpl extends BasePresenterImpl implements FinR
         });
     }
 
+    @Override
+    public void requestDefault(String recordId) {
+        this.mModel.request(recordId, new ResultListener<FinRecordDetailEntity>() {
+            @Override
+            public void onEnd() {
+
+            }
+
+            @Override
+            public void onSuccess( FinRecordDetailEntity data) {
+                if (data != null) {
+                    if(data.getStatusMessage().equals("ok")) {
+                        mView.fillDefault(data);
+                    }else{
+                        mView.showMessage(data.getStatusMessage());
+                    }
+                } else {
+                    mView.showMessage(context.getString(R.string.login_activity_loginfail_toast));
+                }
+            }
+
+            @Override
+            public void onFailure(String message) {
+                mView.showMessage(context.getString(R.string.login_activity_loginfail_toast));
+            }
+
+            @Override
+            public void onStart() {
+
+            }
+        });
+    }
+
     private boolean checkParams(FinRecordDetailEntity.Data entity) {
         if(null == entity) {
             this.mView.showMessage("请填写明细信息");
@@ -137,13 +188,13 @@ public class FinRecordAddPresenterImpl extends BasePresenterImpl implements FinR
             return false;
         }
         if(entity.getReType().equals("支出")) {
-            if(!StringUtils.notIsBlankAndEmpty(entity.getOutId())||StringUtils.notIsBlankAndEmpty(entity.getInId())) {
-                this.mView.showMessage("出账账户不能为空且入账账户应该为空");
+            if(!StringUtils.notIsBlankAndEmpty(entity.getOutId())) {
+                this.mView.showMessage("出账账户不能为空");
                 return false;
             }
         } else if(entity.getReType().equals("收入")) {
-            if(!StringUtils.notIsBlankAndEmpty(entity.getInId())||StringUtils.notIsBlankAndEmpty(entity.getOutId()) ) {
-                this.mView.showMessage("入账账户不能为空且出账账户应该为空");
+            if(!StringUtils.notIsBlankAndEmpty(entity.getInId())) {
+                this.mView.showMessage("入账账户不能为空");
                 return false;
             }
         } else if(entity.getReType().equals("转账")){
