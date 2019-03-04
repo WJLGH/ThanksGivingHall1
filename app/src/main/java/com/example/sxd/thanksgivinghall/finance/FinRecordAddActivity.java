@@ -100,10 +100,9 @@ public class FinRecordAddActivity extends BaseActivity implements FinRecordAddCo
 
     FinRecordDetailEntity.Data data = new FinRecordDetailEntity.Data();
     private FinRecordAddContract.Presenter mPresenter;
-    boolean first = true;
     String id;
-    int defPos = -1;
-
+    int deps = -1;
+    boolean first = true;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -113,7 +112,7 @@ public class FinRecordAddActivity extends BaseActivity implements FinRecordAddCo
         setBackArrow();//设置返回按钮和点击事件
         mPresenter = new FinRecordAddPresenterImpl(FinRecordAddActivity.this, this);
         initView();
-        getDefault();
+
     }
 
     public void getDefault() {
@@ -127,8 +126,8 @@ public class FinRecordAddActivity extends BaseActivity implements FinRecordAddCo
 
     @Override
     public void fillDefault(FinRecordDetailEntity value) {
-        if(value == null) {
-            return ;
+        if (value == null) {
+            return;
         }
         FinRecordDetailEntity.Data record = value.getData();
         FinGood good = record.getGood();
@@ -137,14 +136,14 @@ public class FinRecordAddActivity extends BaseActivity implements FinRecordAddCo
         String[] deptArray = getResources().getStringArray(R.array.dept);
         for (int i = 0; i < deptArray.length; i++) {
             if (deptArray[i].equals(data.getDept())) {
-                spDept.setSelection(i,true);
+                spDept.setSelection(i, true);
                 break;
             }
         }
         String[] reArray = getResources().getStringArray(R.array.reType);
         for (int i = 0; i < reArray.length; i++) {
             if (reArray[i].equals(data.getReType())) {
-                spReType.setSelection(i,true);
+                spReType.setSelection(i, true);
                 break;
             }
         }
@@ -158,23 +157,23 @@ public class FinRecordAddActivity extends BaseActivity implements FinRecordAddCo
         } else if (Constants.FIN_REOCRD_TYPE_CH.equals(type)) {
             busArray = res.getStringArray(R.array.busTypeCh);
         }
+
         for (int i = 0; i < busArray.length; i++) {
             if (busArray[i].equals(data.getBusType())) {
-
+                deps = i;
                 spBusType.setSelection(i,true);
-                defPos = i;
                 break;
             }
         }
 
-        etAmount.setText(String.format("%.2f", data.getAmount()));
+        etAmount.setText(String.format("%.2f", Math.abs(data.getAmount())));
         etDescription.setText(data.getDescription());
         SpinnerAdapter inAcAdapter = spInAc.getAdapter();
         int cnt = inAcAdapter.getCount();
         for (int i = 0; i < cnt; i++) {
             String item = (String) inAcAdapter.getItem(i);
             if (item.equals(data.getInId())) {
-                spInAc.setSelection(i,true);
+                spInAc.setSelection(i, true);
                 break;
             }
         }
@@ -183,7 +182,7 @@ public class FinRecordAddActivity extends BaseActivity implements FinRecordAddCo
         for (int i = 0; i < cnt; i++) {
             String item = (String) outAdapter.getItem(i);
             if (item.equals(data.getOutId())) {
-                spOutAc.setSelection(i,true);
+                spOutAc.setSelection(i, true);
                 break;
             }
         }
@@ -214,12 +213,11 @@ public class FinRecordAddActivity extends BaseActivity implements FinRecordAddCo
             etSupplier.setText(good.getSupplier());
             etBuyer.setText(good.getBuyer());
         }
-       // spBusType.setSelection(2,false);
+         spBusType.setSelection(deps,false);
     }
 
     public void initView() {
         initNoteDateDatePicker();
-        initInOutAcSpinner(null);
         spReType.setOnItemSelectedListener(new Spinner.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -242,22 +240,19 @@ public class FinRecordAddActivity extends BaseActivity implements FinRecordAddCo
 
             }
         });
-
         spBusType.setOnItemSelectedListener(new Spinner.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if(first) {
-                    first = ! first;
-                    if(defPos != -1) {
-                        spBusType.setSelection(defPos);
-                    }
-                    return ;
-                }
-
                 //showMessage("选中的是第"+id+"个");
                 TextView textView = (TextView) view;
                 if (view == null) {
                     return;
+                }
+                if(first) {
+                    first = !first;
+                    if(deps != -1) {
+                        spBusType.setSelection(deps,true);
+                    }
                 }
                 String busType = textView.getText().toString();
                 data.setBusType(busType);
@@ -292,7 +287,7 @@ public class FinRecordAddActivity extends BaseActivity implements FinRecordAddCo
 
             }
         });
-
+        initInOutAcSpinner(null);
     }
 
     /**
@@ -471,8 +466,6 @@ public class FinRecordAddActivity extends BaseActivity implements FinRecordAddCo
             spOutAc.setVisibility(View.VISIBLE);
             tvOutAc.setVisibility(View.VISIBLE);
         }
-        data.setOutId("");
-        data.setInId("");
     }
 
     @OnClick(R.id.btn_fin_record_add_submit)
@@ -482,31 +475,31 @@ public class FinRecordAddActivity extends BaseActivity implements FinRecordAddCo
             showMessage("请输入金额");
             return;
         }
-       if(showPopBusType.equals(data.getBusType())) {
-           String name = etGoodName.getText().toString();
-           String priceStr = etPrice.getText().toString();
-           String amountStr = etQuantity.getText().toString();
-           String unit = etUnit.getText().toString();
-           String address = etSpaAddress.getText().toString();
-           String supplier = etSupplier.getText().toString();
-           String buyer = etBuyer.getText().toString();
-           if (StringUtils.notIsBlankAndEmpty(name) &&
-                   StringUtils.notIsBlankAndEmpty(priceStr) &&
-                   StringUtils.notIsBlankAndEmpty(amountStr) &&
-                   StringUtils.notIsBlankAndEmpty(unit) &&
-                   StringUtils.notIsBlankAndEmpty(address) &&
-                   StringUtils.notIsBlankAndEmpty(supplier) &&
-                   StringUtils.notIsBlankAndEmpty(buyer)) {
-               FinGood finGood = new FinGood(name, priceStr, amountStr, unit, address, supplier, buyer);
-               data.setGood(finGood);
-               Double total = finGood.getPrice() * finGood.getQuantity();
-               String num = String.format("%.2f", total);
-               FinRecordAddActivity.this.etAmount.setText(num);
-           } else {
-               showMessage("未完成商品信息的填写，结果无法被保存！！！");
-               return;
-           }
-       }
+        if (showPopBusType.equals(data.getBusType())) {
+            String name = etGoodName.getText().toString();
+            String priceStr = etPrice.getText().toString();
+            String amountStr = etQuantity.getText().toString();
+            String unit = etUnit.getText().toString();
+            String address = etSpaAddress.getText().toString();
+            String supplier = etSupplier.getText().toString();
+            String buyer = etBuyer.getText().toString();
+            if (StringUtils.notIsBlankAndEmpty(name) &&
+                    StringUtils.notIsBlankAndEmpty(priceStr) &&
+                    StringUtils.notIsBlankAndEmpty(amountStr) &&
+                    StringUtils.notIsBlankAndEmpty(unit) &&
+                    StringUtils.notIsBlankAndEmpty(address) &&
+                    StringUtils.notIsBlankAndEmpty(supplier) &&
+                    StringUtils.notIsBlankAndEmpty(buyer)) {
+                FinGood finGood = new FinGood(name, priceStr, amountStr, unit, address, supplier, buyer);
+                data.setGood(finGood);
+                Double total = finGood.getPrice() * finGood.getQuantity();
+                String num = String.format("%.2f", total);
+                FinRecordAddActivity.this.etAmount.setText(num);
+            } else {
+                showMessage("未完成商品信息的填写，结果无法被保存！！！");
+                return;
+            }
+        }
         Double amount = Double.parseDouble(numStr);
         //如果是支出金额为负数
         if (Constants.FIN_REOCRD_TYPE_OUT.equals(data.getReType())) {
@@ -536,79 +529,9 @@ public class FinRecordAddActivity extends BaseActivity implements FinRecordAddCo
         for (FinAccountListEntity.Data entity : list) {
             acNameList.add(entity.getAcName());
         }
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, acNameList);
-        if (Constants.FIN_REOCRD_TYPE_IN.equals(type)) {
-            spOutAc.setOnItemSelectedListener(new Spinner.OnItemSelectedListener() {
-                @Override
-                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    String outId = list.get(position).getId();
-                    data.setOutId(outId);
-                }
-
-                @Override
-                public void onNothingSelected(AdapterView<?> parent) {
-
-                }
-            });
-        } else if (Constants.FIN_REOCRD_TYPE_OUT.equals(type)) {
-            spOutAc.setAdapter(arrayAdapter);
-
-            spOutAc.setOnItemSelectedListener(new Spinner.OnItemSelectedListener() {
-                @Override
-                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    String outId = list.get(position).getId();
-                    data.setOutId(outId);
-                }
-
-                @Override
-                public void onNothingSelected(AdapterView<?> parent) {
-
-                }
-            });
-        } else if (Constants.FIN_REOCRD_TYPE_CH.equals(type)) {
-            spInAc.setAdapter(arrayAdapter);
-            spInAc.setOnItemSelectedListener(new Spinner.OnItemSelectedListener() {
-                @Override
-                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    String inId = list.get(position).getId();
-                    data.setInId(inId);
-                }
-
-                @Override
-                public void onNothingSelected(AdapterView<?> parent) {
-
-                }
-            });
-            spOutAc.setAdapter(arrayAdapter);
-
-            spOutAc.setOnItemSelectedListener(new Spinner.OnItemSelectedListener() {
-                @Override
-                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    String outId = list.get(position).getId();
-                    data.setOutId(outId);
-                }
-
-                @Override
-                public void onNothingSelected(AdapterView<?> parent) {
-
-                }
-            });
-        }
-        spInAc.setAdapter(arrayAdapter);
-        spInAc.setOnItemSelectedListener(new Spinner.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String inId = list.get(position).getId();
-                data.setInId(inId);
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-        spOutAc.setAdapter(arrayAdapter);
-
+        ArrayAdapter<String> arrayInAdapter = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, acNameList);
+        ArrayAdapter<String> arrayOutAdapter = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, acNameList);
+        spOutAc.setAdapter(arrayOutAdapter);
         spOutAc.setOnItemSelectedListener(new Spinner.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -621,12 +544,26 @@ public class FinRecordAddActivity extends BaseActivity implements FinRecordAddCo
 
             }
         });
+        spInAc.setAdapter(arrayInAdapter);
+        spInAc.setOnItemSelectedListener(new Spinner.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String inId = list.get(position).getId();
+                data.setInId(inId);
+            }
 
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        getDefault();
     }
 
-
+    //当spinner的为第一次变成visible时 会默认产生一个ItemSelected 使得第一个选中
+    //setSelection（i,true)会产生一次ItemSelected 事件，使得第i选中
     public void initInOutAcSpinner(String type) {
-
         mPresenter.requestAcList(type);
     }
 

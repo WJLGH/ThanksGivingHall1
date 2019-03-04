@@ -17,8 +17,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c13e5749-e6e0-42e7-a604-0a0a24566918" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/bean/FinGood.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/popup_good_detail.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/javaCompile/classAnalysis.bin" afterDir="false" />
@@ -28,23 +26,11 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.4/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/FinanceStartActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/FinanceStartActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/api/service/FinRecordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/api/service/FinRecordService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/bean/FinRecordDetailEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/bean/FinRecordDetailEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/AccSumActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/AccSumActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordAddActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordAddActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordAddContract.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordAddContract.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordAddModelImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordAddModelImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordAddPresenterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordAddPresenterImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordDetailActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordDetailActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListContract.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListContract.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListModelImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListModelImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListPresenterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListPresenterImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordStatisticActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordStatisticActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_fin_record_add.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_fin_record_add.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_fin_record_detail.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_fin_record_detail.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_mine.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_mine.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/arrays.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/arrays.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/utils/DeptMapUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/utils/DeptMapUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_acc_sum.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_acc_sum.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -70,7 +56,7 @@
       <file leaf-file-name="FinRecordListModelImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListModelImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="109">
+            <state relative-caret-position="110">
               <caret line="70" selection-start-line="70" selection-end-line="70" />
             </state>
           </provider>
@@ -79,67 +65,66 @@
       <file leaf-file-name="FinRecordAddActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordAddActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="515" selection-start-line="515" selection-end-line="515" />
+            <state relative-caret-position="207">
+              <caret line="183" column="32" lean-forward="true" selection-start-line="183" selection-start-column="32" selection-end-line="183" selection-end-column="32" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FinRecordAddPresenterImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordAddPresenterImpl.java">
+      <file leaf-file-name="FinAccountService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/api/service/FinAccountService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5">
-              <caret line="38" column="16" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
+            <state relative-caret-position="228">
+              <caret line="18" column="44" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="44" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FinRecordListContract.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListContract.java">
+      <file leaf-file-name="FinanceStartActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/FinanceStartActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+            <state relative-caret-position="114">
+              <caret line="66" column="22" selection-start-line="66" selection-start-column="8" selection-end-line="66" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FinRecordListActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListActivity.java">
+      <file leaf-file-name="DeptMapUtils.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/utils/DeptMapUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="145" column="50" lean-forward="true" selection-start-line="145" selection-start-column="50" selection-end-line="145" selection-end-column="50" />
+            <state relative-caret-position="152">
+              <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FinRecordListPresenterImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListPresenterImpl.java">
+      <file leaf-file-name="AccSumPresenterImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/AccSumPresenterImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="71">
-              <caret line="78" selection-start-line="78" selection-end-line="78" />
-              <folding>
-                <element signature="e#2128#2129#0" expanded="true" />
-                <element signature="e#2164#2165#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="236">
+              <caret line="25" selection-start-line="25" selection-end-line="25" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ToDoTaskDetailPresenterImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/task/ToDoTaskDetailPresenterImpl.java">
+      <file leaf-file-name="AccSumModelImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/AccSumModelImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-70">
-              <caret line="109" column="15" selection-start-line="109" selection-start-column="15" selection-end-line="109" selection-end-column="15" />
+            <state relative-caret-position="180">
+              <caret line="18" column="91" selection-start-line="18" selection-start-column="91" selection-end-line="18" selection-end-column="91" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReplyTaskPresenterImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/task/ReplyTaskPresenterImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="62" column="51" selection-start-line="62" selection-start-column="51" selection-end-line="62" selection-end-column="51" />
+      <file leaf-file-name="activity_acc_sum.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_acc_sum.xml">
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="28" column="44" selection-start-line="28" selection-start-column="44" selection-end-line="28" selection-end-column="44" />
             </state>
+          </provider>
+          <provider selected="true" editor-type-id="android-designer2">
+            <state />
           </provider>
         </entry>
       </file>
@@ -157,10 +142,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ChangePwActivity</find>
-      <find>fab</find>
-      <find>showM</find>
-      <find>7</find>
       <find>btn_start_acc_list</find>
       <find>OnDate</find>
       <find>showMessage</find>
@@ -174,7 +155,6 @@
       <find>requestAcLis</find>
       <find>requestAcList</find>
       <find>initInOutAcSpinner</find>
-      <find>spBusType</find>
       <find>setSelection</find>
       <find>spBU</find>
       <find>dpNoteDate.init</find>
@@ -182,6 +162,16 @@
       <find>.setSelection(i)</find>
       <find>Se</find>
       <find>未完</find>
+      <find>fillInOutAcSpinner</find>
+      <find>data.setOutId</find>
+      <find>Date</find>
+      <find>clearView</find>
+      <find>fillDefault</find>
+      <find>getDefault</find>
+      <find>initNoteDateDatePicker</find>
+      <find>setContentL</find>
+      <find>setContentLa</find>
+      <find>spBusType</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -3204,16 +3194,12 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/DateSumActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/bean/FinAccSumListEntity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/AccSumModelImpl.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/api/service/FinAccountService.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/bean/FinTypeSumListEntity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_type_sum.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/TypeSumActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/utils/DeptMapUtils.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/AccSumContract.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/AccSumPresenterImpl.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fin_type_sum_item.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_acc_sum.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/AccSumActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/fin_acc_sum_item.xml" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordStatisticActivity.java" />
@@ -3226,23 +3212,27 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordDetailActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_fin_record_detail.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordDetailContract.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordAddContract.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordAddModelImpl.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_fin_record_add.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListPresenterImpl.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListContract.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/api/service/FinRecordService.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListModelImpl.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_acc_sum.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordAddContract.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordAddPresenterImpl.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordAddModelImpl.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/api/service/FinAccountService.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/AccSumActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/utils/DeptMapUtils.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordAddActivity.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="width" value="978" />
-    <option name="height" value="1039" />
+    <option name="x" value="-10" />
+    <option name="width" value="980" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -3250,6 +3240,7 @@
     </navigator>
     <panes>
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -3291,6 +3282,16 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="thanksgivinghall" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ThanksGivingHall1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ThanksGivingHall1" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="thanksgivinghall" type="462c0819:PsiDirectoryNode" />
+              <item name="base" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ThanksGivingHall1" type="b2602c69:ProjectViewProjectNode" />
@@ -3342,7 +3343,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -3350,6 +3350,7 @@
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="device.picker.selection" value="Nexus_5X_API_28" />
     <property name="extract.method.default.visibility" value="private" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.folding" />
     <property name="show.do.not.ask.upgrade.gradle.plugin" value="3.1.2" />
   </component>
   <component name="RecentsManager">
@@ -3535,7 +3536,14 @@
       <option name="project" value="LOCAL" />
       <updated>1550803630329</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="2019/3/3 增加了记录信息的修改和删除">
+      <created>1551628245878</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1551628245878</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -3559,7 +3567,7 @@
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Preview" order="3" weight="0.32908848" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.48359486" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.30385163" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.4051355" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Logcat" order="7" weight="0.23252496" />
@@ -3574,18 +3582,18 @@
       <window_info anchor="right" id="Device File Explorer" order="3" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.4593438" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.4051355" />
       <window_info anchor="right" id="Assistant" order="3" weight="0.32935917" />
       <window_info anchor="bottom" id="Messages" order="8" weight="0.32952926" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
     <layout-to-restore>
-      <window_info anchor="bottom" id="Build" order="7" weight="0.28388017" />
+      <window_info anchor="bottom" id="Build" order="7" visible="true" weight="0.28388017" />
       <window_info id="Designer" order="2" />
       <window_info id="Build Variants" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
@@ -3604,11 +3612,11 @@
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="Device File Explorer" order="5" side_tool="true" />
       <window_info anchor="right" id="Assistant" order="6" weight="0.32935917" />
-      <window_info anchor="bottom" id="Logcat" order="10" weight="0.61055636" />
-      <window_info anchor="bottom" id="Version Control" order="11" weight="0.48359486" />
+      <window_info anchor="bottom" id="Logcat" order="10" weight="0.23252496" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.30385163" />
       <window_info anchor="bottom" id="Terminal" order="12" />
       <window_info anchor="right" id="Gradle" order="7" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49484536" visible="true" weight="0.16085792" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49484536" visible="true" weight="0.25737265" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.32952926" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32952926" />
@@ -3616,7 +3624,7 @@
       <window_info anchor="right" id="Theme Preview" order="9" />
       <window_info id="Structure" order="1" sideWeight="0.5051546" side_tool="true" weight="0.22453083" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.12125535" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.2724679" />
     </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -3627,32 +3635,15 @@
     <MESSAGE value="2019/2/18 增加统计折线图" />
     <MESSAGE value="2019/2/18 增加账户部分分部门的查看" />
     <MESSAGE value="2019/2/22 修改界面显示" />
-    <option name="LAST_COMMIT_MESSAGE" value="2019/2/22 修改界面显示" />
+    <MESSAGE value="2019/3/3 增加了记录信息的修改和删除" />
+    <option name="LAST_COMMIT_MESSAGE" value="2019/3/3 增加了记录信息的修改和删除" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/login/LoginModelImpl.java</url>
-          <line>28</line>
-          <properties />
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/login/LoginModelImpl.java</url>
-          <line>32</line>
-          <properties />
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/login/LoginModelImpl.java</url>
-          <line>40</line>
-          <properties />
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordAddActivity.java</url>
-          <line>372</line>
+          <line>367</line>
           <properties />
           <option name="timeStamp" value="79" />
         </line-breakpoint>
@@ -3680,8 +3671,14 @@
           <properties />
           <option name="timeStamp" value="105" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordAddActivity.java</url>
+          <line>256</line>
+          <properties />
+          <option name="timeStamp" value="138" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="106" />
+      <option name="time" value="139" />
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
@@ -3699,95 +3696,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-28/android/view/View.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="16396" column="16" selection-start-line="16396" selection-start-column="16" selection-end-line="16396" selection-end-column="16" />
-          <folding>
-            <element signature="e#665721#665722#0" expanded="true" />
-            <element signature="e#665753#665754#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-28/android/os/Handler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="98" selection-start-line="98" selection-end-line="98" />
-          <folding>
-            <element signature="e#34939#34940#0" expanded="true" />
-            <element signature="e#34977#34978#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/retrofit/2.3.0/76f3c69879d3e01c082f49d8661c5590838148e1/retrofit-2.3.0-sources.jar!/retrofit2/ExecutorCallAdapterFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="71" selection-start-line="71" selection-end-line="71" />
-          <folding>
-            <element signature="e#2141#2573#0" expanded="true" />
-            <element signature="e#2572#2573#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/login/LoginModelImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-270">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.PhilJay/MPAndroidChart/v3.0.2/a686f57c1f31262aaecf0cdf700d78eaa8f6b6ab/MPAndroidChart-v3.0.2-sources.jar!/com/github/mikephil/charting/interfaces/datasets/IDataSet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="142" column="28" selection-start-line="142" selection-start-column="27" selection-end-line="142" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordStatisticPresenterImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="50" selection-start-line="50" selection-end-line="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordStatisticModelImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.PhilJay/MPAndroidChart/v3.0.2/a686f57c1f31262aaecf0cdf700d78eaa8f6b6ab/MPAndroidChart-v3.0.2-sources.jar!/com/github/mikephil/charting/renderer/BarLineScatterCandleBubbleRenderer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="92" column="49" lean-forward="true" selection-start-line="92" selection-start-column="49" selection-end-line="92" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.PhilJay/MPAndroidChart/v3.0.2/a686f57c1f31262aaecf0cdf700d78eaa8f6b6ab/MPAndroidChart-v3.0.2-sources.jar!/com/github/mikephil/charting/data/ChartData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="137" column="21" selection-start-line="137" selection-start-column="16" selection-end-line="137" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.PhilJay/MPAndroidChart/v3.0.2/a686f57c1f31262aaecf0cdf700d78eaa8f6b6ab/MPAndroidChart-v3.0.2-sources.jar!/com/github/mikephil/charting/utils/Transformer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="169" column="7" lean-forward="true" selection-start-line="169" selection-start-column="7" selection-end-line="169" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.PhilJay/MPAndroidChart/v3.0.2/a686f57c1f31262aaecf0cdf700d78eaa8f6b6ab/MPAndroidChart-v3.0.2-sources.jar!/com/github/mikephil/charting/renderer/LineChartRenderer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="546" selection-start-line="546" selection-end-line="546" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.PhilJay/MPAndroidChart/v3.0.2/a686f57c1f31262aaecf0cdf700d78eaa8f6b6ab/MPAndroidChart-v3.0.2-sources.jar!/com/github/mikephil/charting/charts/BarLineChartBase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
@@ -3830,42 +3738,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/base/BaseActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1136">
-          <caret line="90" selection-start-line="90" selection-end-line="90" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-28/android/content/res/Resources.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="178">
           <caret line="1859" column="26" selection-start-line="1859" selection-start-column="26" selection-end-line="1859" selection-end-column="26" />
-          <folding>
-            <element signature="e#76459#76460#0" expanded="true" />
-            <element signature="e#76516#76517#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_mine.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
           <caret line="10" column="38" selection-start-line="7" selection-start-column="4" selection-end-line="10" selection-end-column="38" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/popup_window.xml">
-      <provider selected="true" editor-type-id="android-designer2">
+      <provider editor-type-id="android-designer2">
         <state />
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/popup_window.xml">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="19">
           <caret line="1" column="15" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="15" />
         </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/bean/FinGood.java">
@@ -3897,13 +3794,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/popup_good_detail.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="362">
           <caret line="168" column="23" selection-start-line="16" selection-start-column="5" selection-end-line="168" selection-end-column="23" />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/notice/NoticeAddActivity.java">
@@ -3935,13 +3832,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_fin_record_detail.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="146">
           <caret line="149" column="4" lean-forward="true" selection-start-line="149" selection-start-column="4" selection-end-line="308" />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-28/android/widget/DatePicker.java">
@@ -3958,34 +3855,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/arrays.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-28/android/widget/AbsSpinner.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
           <caret line="291" selection-start-line="291" selection-end-line="291" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-28/android/widget/AdapterView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="947" column="9" selection-start-line="947" selection-start-column="9" selection-end-line="947" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_fin_record_add.xml">
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="5776">
-          <caret line="304" column="27" selection-start-line="304" selection-start-column="27" selection-end-line="304" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -4007,16 +3880,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="755" column="15" selection-start-line="755" selection-start-column="15" selection-end-line="755" selection-end-column="15" />
-          <folding>
-            <element signature="e#30591#30592#0" expanded="true" />
-            <element signature="e#30642#30643#0" expanded="true" />
-            <element signature="e#32013#32014#0" expanded="true" />
-            <element signature="e#32091#32092#0" expanded="true" />
-            <element signature="e#33969#33970#0" expanded="true" />
-            <element signature="e#34019#34020#0" expanded="true" />
-            <element signature="e#35582#35583#0" expanded="true" />
-            <element signature="e#35653#35654#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -4029,14 +3892,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/task/ReplyTaskPresenterImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
+        <state relative-caret-position="912">
           <caret line="62" column="51" selection-start-line="62" selection-start-column="51" selection-end-line="62" selection-end-column="51" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/task/ToDoTaskDetailPresenterImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-70">
+        <state relative-caret-position="1786">
           <caret line="109" column="15" selection-start-line="109" selection-start-column="15" selection-end-line="109" selection-end-column="15" />
         </state>
       </provider>
@@ -4048,63 +3911,174 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordAddModelImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="31" column="21" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordAddContract.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListContract.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
+        <state relative-caret-position="95">
           <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="145" column="50" lean-forward="true" selection-start-line="145" selection-start-column="50" selection-end-line="145" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListModelImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="70" selection-start-line="70" selection-end-line="70" />
+        <state relative-caret-position="2318">
+          <caret line="145" column="50" selection-start-line="145" selection-start-column="50" selection-end-line="145" selection-end-column="50" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListPresenterImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
+        <state relative-caret-position="1273">
           <caret line="78" selection-start-line="78" selection-end-line="78" />
-          <folding>
-            <element signature="e#2128#2129#0" expanded="true" />
-            <element signature="e#2164#2165#0" expanded="true" />
-          </folding>
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/arrays.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="23" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/login/LoginModelImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="35" column="13" lean-forward="true" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-28/android/widget/Toast.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="269" selection-start-line="269" selection-end-line="269" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-28/android/widget/AdapterView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="948" selection-start-line="948" selection-end-line="948" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/TypeSumActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-209">
+          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_acc_sum.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="28" column="44" selection-start-line="28" selection-start-column="44" selection-end-line="28" selection-end-column="44" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordAddPresenterImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5">
-          <caret line="38" column="16" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
+        <state relative-caret-position="-76">
+          <caret line="58" column="8" selection-start-line="58" selection-start-column="8" selection-end-line="58" selection-end-column="8" />
+          <folding>
+            <element signature="e#4468#4469#0" expanded="true" />
+            <element signature="e#4530#4531#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordAddModelImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="43" column="94" selection-start-line="43" selection-start-column="94" selection-end-line="43" selection-end-column="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_fin_record_add.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="123" column="47" selection-start-line="123" selection-start-column="47" selection-end-line="124" selection-end-column="30" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordAddContract.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="24" column="38" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordListModelImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="70" selection-start-line="70" selection-end-line="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/AccSumModelImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="18" column="91" selection-start-line="18" selection-start-column="91" selection-end-line="18" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/AccSumPresenterImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/utils/DeptMapUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/AccSumActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="57" column="20" selection-start-line="57" selection-start-column="20" selection-end-line="57" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/api/service/FinAccountService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="18" column="44" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/task/ToDoTaskDetailActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="57" column="8" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/FinanceStartActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="66" column="22" selection-start-line="66" selection-start-column="8" selection-end-line="66" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/base/BaseActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="88" column="28" selection-start-line="88" selection-start-column="16" selection-end-line="88" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sxd/thanksgivinghall/finance/FinRecordAddActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="515" selection-start-line="515" selection-end-line="515" />
+        <state relative-caret-position="207">
+          <caret line="183" column="32" lean-forward="true" selection-start-line="183" selection-start-column="32" selection-end-line="183" selection-end-column="32" />
         </state>
       </provider>
     </entry>

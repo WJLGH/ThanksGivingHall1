@@ -8,7 +8,7 @@ public class DeptMapUtils {
    private static HashMap<String,String> map = new HashMap<String,String>() {
         {
             put("amy","按摩院");
-            put("ct","餐厅");
+            put("fd","饭店");
             put("kfs","开发室");
         }
     };

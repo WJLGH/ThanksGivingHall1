@@ -1,11 +1,13 @@
 package com.example.sxd.thanksgivinghall.finance;
 
 import android.content.Context;
+import android.view.View;
 
 import com.example.sxd.thanksgivinghall.R;
 import com.example.sxd.thanksgivinghall.api.ResultListener;
 import com.example.sxd.thanksgivinghall.base.BasePresenterImpl;
 import com.example.sxd.thanksgivinghall.bean.Base;
+import com.example.sxd.thanksgivinghall.bean.Constants;
 import com.example.sxd.thanksgivinghall.bean.FinAccountListEntity;
 import com.example.sxd.thanksgivinghall.bean.FinGood;
 import com.example.sxd.thanksgivinghall.bean.FinRecordDetailEntity;
@@ -45,8 +47,15 @@ public class FinRecordAddPresenterImpl extends BasePresenterImpl implements FinR
         params.put("busType",entity.getBusType());
         params.put("amount",entity.getAmount());
         params.put("description",entity.getDescription());
-        params.put("inId",entity.getInId());
-        params.put("outId",entity.getOutId());
+        String type = entity.getReType();
+        if (Constants.FIN_REOCRD_TYPE_IN.equals(type)) {
+            params.put("inId",entity.getInId());
+        } else if (Constants.FIN_REOCRD_TYPE_OUT.equals(type)) {
+            params.put("outId",entity.getOutId());
+        } else if (Constants.FIN_REOCRD_TYPE_CH.equals(type)) {
+            params.put("inId",entity.getInId());
+            params.put("outId",entity.getOutId());
+        }
         params.put("dept",entity.getDept());
         //时间字符串
         params.put("noteDate",entity.getNoteDate());
