@@ -12,7 +12,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.ImageView;
+import android.widget.Spinner;
+import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,7 +35,7 @@ import butterknife.Unbinder;
 public class AccSumActivity extends Fragment implements AccSumContract.View{
 
     @BindView(R.id.tv_main_dept)
-    TextView tvMainDept;
+    Spinner tvMainDept;
     @BindView(R.id.tv_main_amount)
     TextView tvMainAmount;
     @BindView(R.id.rv_acc_sum_list)
@@ -56,8 +60,21 @@ public class AccSumActivity extends Fragment implements AccSumContract.View{
     public void initView() {
 //        Intent intent = getIntent();
 //        String id = intent.getStringExtra("id");
-        String dept  = "amy";
-        mPresenter.request(null,dept);
+        final String[] depts = getResources().getStringArray(R.array.dept);
+        tvMainDept.setOnItemSelectedListener(new Spinner.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String fullName  = depts[(int) id];
+                String shortName = DeptMapUtils.getShortName(fullName);
+                mPresenter.request(null,shortName);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
     }
 
     @Override
@@ -69,13 +86,20 @@ public class AccSumActivity extends Fragment implements AccSumContract.View{
     public void requestSuccess(final FinAccSumListEntity value) {
         final List<FinAccSumListEntity.Data> data = value.getData();
         FinAccSumListEntity.Data mainData = value.getMainData();
-        tvMainDept.setText(DeptMapUtils.getFullName(mainData.getDept()));
+        SpinnerAdapter adapter = tvMainDept.getAdapter();
+        for(int i = 0;i<adapter.getCount();i++) {
+            String item = (String) adapter.getItem(i);
+            if(item.equals(DeptMapUtils.getFullName(mainData.getDept()))) {
+                tvMainDept.setSelection(i,true);
+                break;
+            }
+        }
         tvMainAmount.setText(String.format("%.2f",mainData.getAmount()));
-        adapter = new FinAccSumListAdapter(R.layout.fin_acc_sum_item,data);
-        rvList.setAdapter(adapter);
+        this.adapter = new FinAccSumListAdapter(R.layout.fin_acc_sum_item,data);
+        rvList.setAdapter(this.adapter);
         rvList.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        adapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+        this.adapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
 //                ImageView imageView = view.findViewById(R.id.imageView);
