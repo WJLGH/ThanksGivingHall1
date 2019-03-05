@@ -57,7 +57,6 @@
         <activity android:name=".task.ReplyTaskActivity" />
         <activity android:name=".finance.FinRecordDetailActivity" />
         <activity android:name=".finance.FinRecordAddActivity">
-
             <!-- <intent-filter> -->
             <!-- <action android:name="android.intent.action.MAIN" /> -->
 
@@ -65,7 +64,10 @@
             <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
             <!-- </intent-filter> -->
         </activity>
+        <activity android:name=".finance.FinAccountAddActivity"></activity>
+        <activity android:name=".finance.FinAccountListActivity"></activity>
         <activity android:name=".FinanceStartActivity"></activity>
+        <activity android:name=".finance.FinAccountDetailActivity"></activity>
         <activity android:name=".finance.FinRecordListActivity" />
         <!-- <activity android:name=".finance.TypeSumActivity" /> -->
         <!-- <activity android:name=".finance.DateSumActivity" /> -->

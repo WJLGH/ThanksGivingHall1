@@ -19,6 +19,15 @@ public class FinAccountListEntity {
     public class Data{
         private String id;
         private String acName;
+        private String acType;
+        public String getAcType() {
+            return acType;
+        }
+
+        public void setAcType(String acType) {
+            this.acType = acType;
+        }
+
 
         public String getId() {
             return id;
